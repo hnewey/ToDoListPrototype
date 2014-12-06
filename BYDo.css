@@ -135,20 +135,15 @@ nav#dropdown-nav ul li {
 .lists-menu {
     border-bottom-style: solid;
     border-bottom-color: rgb(180,180,180);
-    border-bottom-width:1px;
+    border-bottom-width: 1px;
     padding-bottom: 10px;
+    margin-right: -30px;
+    margin-left: -30px;
 }
 
 nav#dropdown-nav ul li {
     padding: 10px;
     margin: 0;
-}
-
-span.separator {
-}
-
-.separator {
-    border-bottom-color: black;
 }
 
 .lists-menu {
@@ -161,6 +156,10 @@ nav#dropdown-nav {
     border-color: rgb(180,180,180);      
     border-width: 1px;
     border-top-color: rgb(217,217,217);
+}
+
+ul#task-lists {
+    margin-left: -30px;
 }
 
 /****************************************
