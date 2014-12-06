@@ -1,10 +1,10 @@
 /*************************************************
-*    		Website Mobile App - BY-Do   		 *
-*				Box of Chocolates				 *
+*    	Website Mobile App - BY-Do   		 *
+*	Box of Chocolates			 *
 *************************************************/
 
 /****************************************
-*			GENERAL STYLING				*
+*	   GENERAL STYLING		*
 ****************************************/
 *:before, *:after {
 -webkit-box-sizing: border-box;
@@ -124,7 +124,7 @@ color: white;
 }
 
 /****************************************
-*			TABLE STYLING				*
+*	     TABLE STYLING		*
 ****************************************/
 .tbl > thead > tr > th,
 .tbl > thead > tr > td,
@@ -142,7 +142,7 @@ border-top: 1px solid #dddddd;
 }
 
 /****************************************
-*	    SEARCH/ADD BUTTON STYLING       *
+*	SEARCH/ADD BUTTON STYLING       *
 ****************************************/
 .search-task {
     width: 100%;
