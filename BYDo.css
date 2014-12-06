@@ -1,0 +1,160 @@
+/*************************************************
+*    		Website Mobile App - BY-Do   		 *
+*				Box of Chocolates				 *
+*************************************************/
+
+/****************************************
+*			GENERAL STYLING				*
+****************************************/
+*:before, *:after {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+body {
+    margin: 3%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+th {
+text-align: left;
+padding-right: 33%;
+}
+
+table#tbl-list {
+width: 100%;
+}
+
+ul.navbar {
+    list-style: none;
+}
+
+
+/****************************************
+*			NAVBAR STYLING				*
+****************************************/
+nav li {
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav#main-navbar ul {
+    display: inline;
+	text-decoration: none;
+}
+
+nav#main-navbar ul li {
+    display: inline;
+}
+
+#navbar {
+    padding:0;
+}
+
+#title {
+    margin-left: 38.7%;
+    margin-right: 30%;
+    padding: 10px 0px;
+}
+
+#nav-list {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    padding: 10px;
+}
+
+
+#nav-week {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  padding: 10px;
+}
+
+#dropdown-nav {
+    padding:10;
+    margin: -2px 0px;
+    position: fixed;
+    background-color: rgb(217,217,217);
+}
+
+ul#navbar {
+    background-color: black;
+    color: white;
+    padding: 20px 0px 20px 0px;
+}
+
+li.main-dropdown {
+    padding: 20px 3.5%;
+    margin: 0px;
+    background-color: rgb(217,217,217);
+}
+
+#dropdown-nav ul.dropdown-menu {
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 2em;
+	-webkit-margin-end: 2em;
+	-webkit-padding-start: 0px;
+}
+
+nav#main-navbar {
+    margin-bottom: 20px;
+}
+
+ul#navbar a.dropdown-toggle {
+    color: black;
+    font-weight: bold;
+}
+
+nav#main-navbar a {
+color: white;
+}
+
+/****************************************
+*			TABLE STYLING				*
+****************************************/
+.tbl > thead > tr > th,
+.tbl > thead > tr > td,
+.tbl > tbody > tr > th,
+.tbl > tbody > tr > td {
+padding: 8px;
+line-height: 1.42857143;
+vertical-align: top;
+border-top: 1px solid #dddddd;
+}
+
+.tbl-striped > tbody > tr:nth-child(odd) > td,
+.tbl-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+}
+
+/****************************************
+*	    SEARCH/ADD BUTTON STYLING       *
+****************************************/
+.search-task {
+    width: 100%;
+    margin: 0.5% 0px;
+}
+
+input.search-add-bar {
+    width: 89.3%;
+    padding: 10px 0px;
+}
+
+button.btn.important-button {
+    padding: 10px 0px;
+    width: 10%;
+}

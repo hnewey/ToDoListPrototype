@@ -1,0 +1,116 @@
+<?xml version-"1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" encoding="UTF-8" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>BY-Do</title>
+    <!-- Put your css links and small amounts of page level style code here -->
+    <link rel="stylesheet" href="./BYDo.css" type="text/css">
+    <!-- Put your .js links here so that they may take advantage of web browser cache -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./BYDo.js"></script>
+</head>
+	<nav id="main-navbar">
+	    <ul id="navbar">
+	      <!-- Menu Dropdown Button -->
+		  <li role="presentation" class="main-dropdown">
+	    	<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+		  	  <span class="menu-icon">| | |</span>
+		    </a>
+		  </li>
+		  <li id="title">BY-Do</li>
+		  <li id="nav-list"><a href="#">List</a></li>
+		  <li id="nav-week"><a href="#">Week</a></li>
+	    </ul>
+	</nav>
+	
+	<nav id="dropdown-nav">
+	  <ul class="dropdown-menu" role="menu">
+	    <!--Menu Items -->
+	    <li class="dropdown ">
+	  	<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+	  	Task Lists <span class="caret"></span>
+	  	</a>
+	  	<ul class="lists-menu" role="menu" id="task-lists">
+	  	  <!-- Dynamic Task Lists Items Will go here (Below are placeholders -->
+	  	  <li>All</li>
+	  	  <li>List 1</li>
+	  	  <li>List 2</li>
+	  	  <li>List 3</li>
+	  	  <li><span class="add"></span><a href="#">Add List</a></li>
+	  	</ul>
+	    </li>
+	    <span class="separator"></span>
+	    <li class="dropdown">
+	  	<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+	  	Accounts <span class="caret"></span>
+	  	</a>
+	  	<ul class="accounts-menu" role="menu" id="task-lists">
+	  	  <!-- Dynamic Task Lists Items Will go here (Below are placeholders) -->
+	  	  <li><span class="learningsuite"></span>BYU LearningSuite</li>
+	  	  <li><span class="gtasks"></span>GTasks</li>
+	  	  <li><span class="other"></span>Other Website</li>
+	  	  <li><span class="image"></span>Image</li>
+	  	  <li><span class="import"></span><a href="#">Import Account</a></li>
+	  	</ul>
+	    </li>
+	  </ul>
+	</nav>
+	
+    <body>
+	<div class="search-add">
+		<form role="search">
+			<div class="search-task">
+			<input type="text" class="search-add-bar" placeholder="Search Tasks / Quick Add">
+			<button type="submit" class="btn important-button">Add Task</button>
+			</div>
+		</form>
+	</div>
+	
+	<table class="tbl tbl-striped" id="tbl-list">
+		<thead id="head-list">
+			<tr>
+				<th id="task-col">Task</th>
+				<th id="due-col"><a href="#">Due <span class="dbl-arrows"></span></a></th>
+				<th id="priority-col"><a href="#">Priority <span class="dbl-arrows"></span></a></th>
+			</tr>
+		</thead>
+		<tbody id="dynamic-list">
+		  <!-- Below are placeholders -->
+		  <tr class="row1">
+			<td>Name</td>
+			<td>6:00pm</td>
+			<td>High</td>
+		  </tr>
+		  <tr class="row2">
+			<td>Name</td>
+			<td>7:00pm</td>
+			<td>Med</td>
+		  </tr>
+		  <tr class="row3">
+			<td>Name</td>
+			<td>8:00pm</td>
+			<td>Low</td>
+		  </tr>
+		  <tr class="row4">
+			<td>Name</td>
+			<td>7:00pm</td>
+			<td>Med</td>
+		  </tr>
+		  <tr class="row5">
+			<td>Name</td>
+			<td>10:00am</td>
+			<td>Low</td>
+		  </tr>
+		</tbody>
+    </table>
+		
+	<script>
+		$(document).ready( function () {
+			createDynamicList("listName", "/loc/of/jsonFile.json");
+			$("#due-col").click(sortDue);
+            $("#priority-col").click(sortPriority);
+		}
+	</script>
+    </body>
+</html>
