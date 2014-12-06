@@ -104,6 +104,25 @@ li.main-dropdown {
     border-bottom-color: rgb(217,217,217);
 }
 
+/*//TOGGLE FOR JQUERY FOR MENU ICON CLICK
+li.main-dropdown {
+	padding: 20px 3.5%;
+	margin: 0px;
+	background-color: black;
+	border-style: none;
+	border-color: black;
+	border-width: 0px;
+	border-bottom-color: black;
+}
+
+ul#navbar a.dropdown-toggle {
+	color: white;
+}
+
+nav#dropdown-nav {
+	display: none;
+}
+*/
 #dropdown-nav ul.dropdown-menu {
 	-webkit-margin-before: 1em;
 	-webkit-margin-after: 1em;
