@@ -129,7 +129,9 @@ nav#dropdown-nav ul li {
 }
 
 .lists-menu {
-    border-bottom-style: solid;  
+    border-bottom-style: solid;
+    border-bottom-color: rgb(180,180,180);
+    border-bottom-width:1px;
     padding-bottom: 10px;
 }
 
