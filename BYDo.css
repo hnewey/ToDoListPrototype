@@ -1,10 +1,10 @@
 /*************************************************
-*    	Website Mobile App - BY-Do   		 *
-*	Box of Chocolates			 *
+*    	   Website Mobile App - BY-Do   	 *
+*		Box of Chocolates		 *
 *************************************************/
 
 /****************************************
-*	   GENERAL STYLING		*
+*  	  GENERAL STYLING	   	*
 ****************************************/
 *:before, *:after {
 -webkit-box-sizing: border-box;
@@ -41,7 +41,7 @@ ul.navbar {
 
 
 /****************************************
-*			NAVBAR STYLING				*
+*	     NAVBAR STYLING		*
 ****************************************/
 nav li {
     list-style: none;
@@ -65,7 +65,7 @@ nav#main-navbar ul li {
 }
 
 #title {
-    margin-left: 38.7%;
+    margin-left: 38.02%;
     margin-right: 30%;
     padding: 10px 0px;
 }
@@ -124,21 +124,28 @@ color: white;
 }
 
 /****************************************
-*	     TABLE STYLING		*
+*     	     TABLE STYLING		*
 ****************************************/
-.tbl > thead > tr > th,
-.tbl > thead > tr > td,
-.tbl > tbody > tr > th,
-.tbl > tbody > tr > td {
-padding: 8px;
+#tbl-list > thead > tr > th,
+#tbl-list > thead > tr > td,
+#tbl-list > tbody > tr > th,
+#tbl-list > tbody > tr > td {
+padding: 10px;
 line-height: 1.42857143;
 vertical-align: top;
 border-top: 1px solid #dddddd;
 }
 
-.tbl-striped > tbody > tr:nth-child(odd) > td,
-.tbl-striped > tbody > tr:nth-child(odd) > th {
+#tbl-list > tbody > tr:nth-child(even) {
   background-color: #f9f9f9;
+}
+
+table#tbl-list tbody {
+background-color: rgb(225,225,225);
+}
+
+table#tbl-list {
+background-color: rgb(200,200,200);
 }
 
 /****************************************
