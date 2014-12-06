@@ -123,6 +123,16 @@ nav#main-navbar a {
 color: white;
 }
 
+nav#dropdown-nav ul li {
+    padding: 10px 0px;
+    margin: 0px;
+}
+
+.lists-menu {
+    border-bottom-style: solid;  
+    padding-bottom: 10px;
+}
+
 /****************************************
 *     	     TABLE STYLING		*
 ****************************************/
