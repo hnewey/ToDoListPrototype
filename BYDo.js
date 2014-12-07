@@ -1,9 +1,16 @@
 var filteredData = [];
 
 $(document).ready(function() {
+  showListTab();
+});
+
+function showListTab()
+{
+  $('#tbl-day').hide();
+  $('#tbl-list').show();
   filteredData = data;
   renderListTable();
-});
+}
 
 function renderListTable()
 {
