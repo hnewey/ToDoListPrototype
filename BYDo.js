@@ -1,8 +1,14 @@
-var jsonFile = [];
-createDynamicList(var listName) {
-	//Create the dynamic list according to the name of the list
-}
+var filteredData = [];
 
+$(document).ready(function() {
+  filteredData = data;
+  renderListTable();
+});
+
+function renderListTable()
+{
+  
+}
 
 //BELOW SHOULD PROBABLY MORE SIMPLE THROUGH JQUERY -- THIS WAS OLD CODE I HAD THAT WORKS
 //sorting algorithm ASC

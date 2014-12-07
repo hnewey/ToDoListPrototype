@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./BYDo.css" type="text/css">
     <!-- Put your .js links here so that they may take advantage of web browser cache -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./data.js"></script>
     <script src="./BYDo.js"></script>
 </head>
 	<nav id="main-navbar">
@@ -104,13 +105,5 @@
 		  </tr>
 		</tbody>
     </table>
-		
-	<script>
-		$(document).ready( function () {
-			createDynamicList("listName", "/loc/of/jsonFile.json");
-			$("#due-col").click(sortDue);
-            $("#priority-col").click(sortPriority);
-		}
-	</script>
     </body>
 </html>
