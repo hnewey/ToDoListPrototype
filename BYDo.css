@@ -260,12 +260,6 @@ button.btn.important-button {
 		position: absolute;
 	}
 
-	/* When Menu Icon IS Selected */
-	/*li.main-dropdown {
-		padding: 20px 47px;
-	}*/
-	
-	/* When Menu Icon is NOT Selected */
 	li.main-dropdown {
 		padding: 20px 44px;
 	}
@@ -335,15 +329,6 @@ button.btn.important-button {
 		position: absolute;
 	}
 
-	/* When Menu Icon IS Selected */
-	/*
-	li.main-dropdown {
-		padding: 20px 42px;
-	}
-	*/
-
-	/* --------------------------- */
-	/* When Menu Icon is NOT Selected */
 	li.main-dropdown {
 		padding: 20px 42px;
 	}
@@ -412,8 +397,6 @@ button.btn.important-button {
 	margin-left: -4px;
 	}
 
-	/* --------------------------- */
-	/* When Menu Icon is NOT Selected */
 	li.main-dropdown {
 		padding: 20px 42px;
 	}
@@ -487,15 +470,7 @@ button.btn.important-button {
 		margin: 17px 0px;
 		position: absolute;
 	}
-
-	/* When Menu Icon IS Selected */
-	/*
-	li.main-dropdown {
-		padding: 20px 42px;
-		margin: 0px;
-	}*/
-
-	/* When Menu Icon is NOT Selected */
+	
 	li.main-dropdown {
 		padding: 20px 42px;
 	}
@@ -560,12 +535,6 @@ button.btn.important-button {
 	margin-left: -4px;
 	}
 
-	/* When Menu Icon IS Selected *//*
-	li.main-dropdown {
-		padding: 20px 42px;
-		margin: 0px;
-	}*/
-	/* When Menu Icon is NOT Selected */
 	li.main-dropdown {
 		padding: 20px 42px;
 		border-width: 0px;
