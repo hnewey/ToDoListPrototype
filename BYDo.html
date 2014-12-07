@@ -52,7 +52,7 @@
 	  	  <li><span class="learningsuite"></span>BYU LearningSuite</li>
 	  	  <li><span class="gtasks"></span>GTasks</li>
 	  	  <li><span class="other"></span>Other Website</li>
-	  	  <li><span class="image"></span>Image</li>
+	  	  <li><span class="image"></span><a href="#" onclick="imageOverlay()">Image</a></li>
 	  	  <li><span class="import"></span><a href="#">Import Account</a></li>
 	  	</ul>
 	    </li>
@@ -71,7 +71,7 @@
 	
 	<div id="weekly-header-bar">
 	</div>
-	
+
 	<table class="tbl tbl-striped" id="tbl-list">
 		<thead id="head-list">
 			<tr>
@@ -86,5 +86,12 @@
 
     <table class="tbl" id="tbl-day" style="display:none;">
     </table> 
+
+    <div id="imageOverlay">
+    	<div>
+    		<p>Upload Your Photo</p>
+    		<button onclick="imageOverlay()">Cancel</button><button onclick="uploadImageData()">Upload</button>
+    	</div>
+    </div>
     </body>
 </html>

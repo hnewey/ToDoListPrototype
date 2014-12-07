@@ -252,6 +252,26 @@ button.btn.important-button {
     color: white;
 }
 
+#imageOverlay {
+     visibility: hidden;
+     position: absolute;
+     left: 0px;
+     top: 0px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+}
+
+#imageOverlay div {
+     width:300px;
+     margin: 100px auto;
+     background-color: #fff;
+     border:1px solid #000;
+     padding:15px;
+     text-align:center;
+}
+
 
 /******************************************************
 ***********  STYLING BETWEEN 0PX and 499PX  ***********

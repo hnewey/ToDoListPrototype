@@ -166,3 +166,50 @@ function renderWeeklyTable() {
 function sortNumber(a,b) {
     return a - b;
 }
+
+function imageOverlay() {
+  el = document.getElementById("imageOverlay");
+  el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+}
+
+function uploadImageData() {
+  
+  data.push(
+    {
+    "name": "Mariah Torres Wedding",
+    "due": new Date("December 13, 2014 18:00:00"),
+    "priority": "High",
+    "list": "Personal"
+    }
+  );
+
+  data.push(
+    {
+    "name": "Primary Party",
+    "due": new Date("December 20, 2014 18:00:00"),
+    "priority": "High",
+    "list": "Personal"
+    }
+  );
+
+  data.push(
+    {
+    "name": "Devin's B-day",
+    "due": new Date("December 21, 2014 0:00:00"),
+    "priority": "High",
+    "list": "Personal"
+    }
+  );
+
+  data.push(
+    {
+    "name": "Due Date :)",
+    "due": new Date("December 29, 2014 18:00:00"),
+    "priority": "High",
+    "list": "Personal"
+    }
+  );
+
+  imageOverlay();
+  showListTab();
+}
