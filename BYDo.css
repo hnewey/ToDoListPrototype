@@ -2,7 +2,9 @@
 *    	   Website Mobile App - BY-Do   	 *
 *		Box of Chocolates		 *
 *************************************************/
-
+html {
+	width: 1280px;
+}
 /****************************************
 *  	  GENERAL STYLING	   	*
 ****************************************/
@@ -13,7 +15,7 @@ box-sizing: border-box;
 }
 
 body {
-    margin: 3%;
+    margin: 40px;
 }
 
 table {
@@ -28,11 +30,11 @@ th {
 
 th {
 text-align: left;
-padding-right: 33%;
+padding-right: 400px;
 }
 
 table#tbl-list {
-width: 100%;
+width: 1200px;
 }
 
 ul.navbar {
@@ -65,25 +67,32 @@ nav#main-navbar ul li {
 }
 
 #title {
-    margin-left: 37.4%;
-    margin-right: 30%;
+    margin-left: 450px;
+    margin-right: 349px;
     padding: 10px 0px;
 }
 
 #nav-list {
-    padding: 1.6% 3.5%;  
+    padding: 19px 45px;  
     border-style: solid;
     border-color: #1b5da5;
     border-width: 1px;
     background-color: #1b5da5;
-    -webkit-box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77); -moz-box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77); box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77);
+    /*Uncomment box-shadow lines below if Week View is selected */
+    /*-webkit-box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77); 
+	-moz-box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77);
+	box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77);*/
 }
 
 
 #nav-week {
-padding: 1.7% 3.7%;
+padding: 20px 45px;
 background-color: #1b5da5;
 margin-left: -4px;
+/*Uncomment box-shadow lines below if List View is selected */
+-webkit-box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
+-moz-box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
+box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
 }
 
 #dropdown-nav {
@@ -102,7 +111,7 @@ ul#navbar {
 /* When Menu Icon IS Selected *//*
 
 li.main-dropdown {
-    padding: 20px 3.5%;
+    padding: 20px 42px;
     margin: 0px;
     background-color: rgb(217,217,217);
     border-style: solid;  border-color: rgb(180,180,180);  border-width: 1px;  
@@ -120,7 +129,7 @@ nav#dropdown-nav {
 *//* --------------------------- */
 /* When Menu Icon is NOT Selected */
 li.main-dropdown {
-	padding: 20px 3.5%;
+	padding: 20px 42px;
 	background-color: black;
 	border-style: none;
 	border-color: black;
@@ -218,7 +227,7 @@ background-color: rgb(200,200,200);
 *	SEARCH/ADD BUTTON STYLING       *
 ****************************************/
 .search-task {
-    width: 101%;
+    width: 1205px;
     margin: 0px 0px;
 }
 
@@ -229,16 +238,16 @@ background-color: rgb(200,200,200);
 }
 
 input.search-add-bar {
-    width: 88.8%;
+    width: 1077px;
     padding: 10px 0px;
 }
 
 button.btn.important-button {
-    padding: 10px 0px;
-    width: 10%;
+    padding: 11px 0px;
+    width: 120px;
     position: relative;
     left: -5px;
     background-color: #FFC000;
     border-color: black;
-    border-width: 2px;
+    border-width: 1px;
 }
