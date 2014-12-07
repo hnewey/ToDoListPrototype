@@ -7,7 +7,29 @@ $(document).ready(function() {
 
 function renderListTable()
 {
-  
+  $('#tbl-list tbody').html('');
+  $(filteredData).each(function(index, task) {
+    var tr = $('<tr>');
+    $(tr).append('<td>'+task.name+'</td>');
+    $(tr).append('<td>'+getReadableDate(task.due)+'</td>');
+    $(tr).append('<td>'+task.priority+'</td>');
+    $('#tbl-list tbody').append(tr);
+  });
+}
+
+function getReadableDate(date)
+{
+  return (date.getMonth() + 1) + '/' + date.getDate() + ' ' + zeroPad(2, date.getHours()) + ':' + zeroPad(2, date.getMinutes());
+}
+
+function zeroPad(length, val)
+{
+  while (val.toString().length < length)
+  {
+    val = '0' + val.toString();
+  }
+
+  return val;
 }
 
 //BELOW SHOULD PROBABLY MORE SIMPLE THROUGH JQUERY -- THIS WAS OLD CODE I HAD THAT WORKS
