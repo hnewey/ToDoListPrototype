@@ -193,6 +193,11 @@ table#tbl-list {
 background-color: rgb(200,200,200);
 }
 
+tbody td#date-row {
+    background-color: rgb(204, 229, 255);
+    text-align: center;
+}
+
 /****************************************
 *	SEARCH/ADD BUTTON STYLING       *
 ****************************************/
@@ -220,6 +225,31 @@ button.btn.important-button {
 	background-color: #FFC000;
 	border-color: black;
 	border-width: 1px;
+}
+
+/****************************************
+*         WEEKLY VIEW STYLING           *
+****************************************/
+
+#weekly-header-bar {
+    
+}
+
+#left-arrow-weekly-bar {
+    float: left;
+}
+
+#right-arrow-weekly-bar {
+    float: right;
+}
+
+#weekly-header-paragraph {
+    padding-top: 15px;
+    text-align: center;
+    margin: 0px;
+    background-color: #1b5da5;
+    height: 35px;
+    color: white;
 }
 
 
