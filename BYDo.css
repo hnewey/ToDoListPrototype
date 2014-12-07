@@ -3,7 +3,7 @@
 *		Box of Chocolates		 *
 *************************************************/
 /****************************************
-*  	  GENERAL STYLING	   	*
+*  	  GENERAL STYLING	   				*
 ****************************************/
 input.search-add-bar {
 -webkit-box-sizing: border-box;
@@ -31,7 +31,7 @@ ul.navbar {
 
 
 /****************************************
-*	     NAVBAR STYLING		*
+*	     NAVBAR STYLING					*
 ****************************************/
 nav a {
 	text-decoration: none;
@@ -222,6 +222,10 @@ button.btn.important-button {
 	border-width: 1px;
 }
 
+
+/******************************************************
+***********  STYLING BETWEEN 0PX and 499PX  ***********
+******************************************************/
 @media all and (min-width: 0px) and (max-width:499px) {
 	html {
 		width: 320px;
@@ -285,32 +289,18 @@ button.btn.important-button {
 	}
 }
 
+
+/******************************************************
+***********  STYLING BETWEEN 500PX and 749PX  *********
+******************************************************/
 @media all and (min-width: 500px) and (max-width:749px) {
 	html {
 		width: 500.5px;
 		margin: auto;
 	}
-	/****************************************
-	*  	  GENERAL STYLING	   	*
-	****************************************/
-	*:before, *:after {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	}
-
+	
 	body {
 		margin: 20px 31.25px;
-	}
-
-	table {
-	  border-collapse: collapse;
-	  border-spacing: 0;
-	}
-
-	td,
-	th {
-	  padding: 0;
 	}
 
 	th {
@@ -322,35 +312,9 @@ button.btn.important-button {
 	width: 438px;
 	}
 
-	ul.navbar {
-		list-style: none;
-	}
-
-
 	/****************************************
 	*	     NAVBAR STYLING		*
 	****************************************/
-	nav li {
-		list-style: none;
-	}
-
-	nav a {
-		text-decoration: none;
-	}
-
-	nav#main-navbar ul {
-		display: inline;
-		text-decoration: none;
-	}
-
-	nav#main-navbar ul li {
-		display: inline;
-	}
-
-	#navbar {
-		padding:0;
-	}
-
 	#title {
 		margin-left: 10px;
 		margin-right: 27px;
@@ -359,154 +323,31 @@ button.btn.important-button {
 
 	#nav-list {
 		padding: 19px 45px;  
-		border-style: solid;
-		border-color: #1b5da5;
-		border-width: 1px;
-		background-color: #1b5da5;
-		/*Uncomment box-shadow lines below if Week View is selected */
-		/*-webkit-box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77); 
-		-moz-box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77);
-		box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77);*/
 	}
-
 
 	#nav-week {
-	padding: 20px 45px;
-	background-color: #1b5da5;
-	margin-left: -4px;
-	/*Uncomment box-shadow lines below if List View is selected */
-	-webkit-box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
-	-moz-box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
-	box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
+		padding: 20px 45px;
+		margin-left: -4px;
 	}
 
-	#dropdown-nav {
-		
+	#dropdown-nav {		
 		margin: 17px 0px;
 		position: absolute;
-		background-color: rgb(217,217,217);
-	}
-
-	ul#navbar {
-		background-color: black;
-		color: white;
-		padding: 20px 0px 20px 0px;
 	}
 
 	/* When Menu Icon IS Selected */
 	/*
 	li.main-dropdown {
 		padding: 20px 42px;
-		margin: 0px;
-		background-color: rgb(217,217,217);
-		border-style: solid;  border-color: rgb(180,180,180);  border-width: 1px;  
-		border-bottom-color: rgb(217,217,217);
 	}
+	*/
 
-	ul#navbar a.dropdown-toggle {
-		color: black;
-		font-weight: bold;
-	}
-
-	nav#dropdown-nav {
-		display: initial;
-	}
-
-	#dropdown-nav ul.dropdown-menu {
-		-webkit-margin-before: 1em;
-		-webkit-margin-after: 1em;
-		-webkit-margin-start: 2em;
-		-webkit-margin-end: 2em;
-		-webkit-padding-start: 0px;
-	}*/
 	/* --------------------------- */
 	/* When Menu Icon is NOT Selected */
 	li.main-dropdown {
 		padding: 20px 42px;
-		background-color: black;
-		border-style: none;
-		border-color: black;
-		border-width: 0px;
-		border-bottom-color: black;
 	}
 
-	ul#navbar a.dropdown-toggle {
-		color: white;
-	}
-
-	nav#dropdown-nav {
-		display: none;
-	}
-	/* --------------------------- */
-
-	nav#main-navbar {
-		margin-bottom: 2px;
-
-	}
-
-	nav#main-navbar a {
-	color: white;
-	}
-
-	nav#dropdown-nav ul li {
-		padding: 10px 0px;
-		margin: 0px;
-	}
-
-	.lists-menu {
-		border-bottom-style: solid;
-		border-bottom-color: rgb(180,180,180);
-		border-bottom-width: 1px;
-		padding-bottom: 10px;
-		margin-right: -30px;
-		margin-left: -30px;
-	}
-
-	nav#dropdown-nav ul li {
-		padding: 10px;
-		margin: 0px 4px;
-	}
-
-	.lists-menu {
-		border-bottom-style: solid;  
-		padding-bottom: 10px;
-	}
-
-	nav#dropdown-nav {
-		border-style: solid;      
-		border-color: rgb(180,180,180);      
-		border-width: 1px;
-		border-top-color: rgb(217,217,217);
-	}
-
-	ul#task-lists {
-		margin-left: -30px;
-	}
-
-	/****************************************
-	*     	     TABLE STYLING		*
-	****************************************/
-	#tbl-list > thead > tr > th,
-	#tbl-list > thead > tr > td,
-	#tbl-list > tbody > tr > th,
-	#tbl-list > tbody > tr > td {
-	padding: 10px;
-	line-height: 1.42857143;
-	vertical-align: top;
-	border-top: 1px solid #dddddd;
-	}
-
-	#tbl-list > tbody > tr:nth-child(even) {
-	  background-color: #f9f9f9;
-	}
-
-	table#tbl-list tbody {
-	background-color: rgb(225,225,225);
-	}
-
-	table#tbl-list {
-	background-color: rgb(200,200,200);
-	}
 
 	/****************************************
 	*	SEARCH/ADD BUTTON STYLING       *
@@ -514,12 +355,6 @@ button.btn.important-button {
 	.search-task {
 		width: 945px;
 		margin: 0px -1px;
-	}
-
-	.search-add {
-		border-top-style: solid;
-		border-top-width: 30px;
-		border-top-color: #1b5da5;
 	}
 
 	input.search-add-bar {
@@ -527,50 +362,31 @@ button.btn.important-button {
 		padding: 10px 0px;
 	
 		margin: 0px 1px;
-}
+	}
 
 	button.btn.important-button {
 		padding: 11px 0px;
 		width: 121px;
 		position: relative;
 		left: -5px;
-		background-color: #FFC000;
-		border-color: black;
-		border-width: 1px;
 	}
 }
 
+
+/******************************************************
+***********  STYLING BETWEEN 750PX and 999PX  *********
+******************************************************/
 @media all and (min-width: 750px) and (max-width:999px) {
 	html {
 		width: 750.5px;
-	
 		margin: auto;
-}
-	/****************************************
-	*  	  GENERAL STYLING	   	*
-	****************************************/
-	*:before, *:after {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 	}
-
+	
 	body {
 		margin: 20px 31.25px;
 	}
 
-	table {
-	  border-collapse: collapse;
-	  border-spacing: 0;
-	}
-
-	td,
 	th {
-	  padding: 0;
-	}
-
-	th {
-	text-align: left;
 	padding-right: 312.5px;
 	}
 
@@ -578,190 +394,28 @@ button.btn.important-button {
 	width: 688px;
 	}
 
-	ul.navbar {
-		list-style: none;
-	}
-
-
 	/****************************************
 	*	     NAVBAR STYLING		*
 	****************************************/
-	nav li {
-		list-style: none;
-	}
-
-	nav a {
-		text-decoration: none;
-	}
-
-	nav#main-navbar ul {
-		display: inline;
-		text-decoration: none;
-	}
-
-	nav#main-navbar ul li {
-		display: inline;
-	}
-
-	#navbar {
-		padding:0;
-	}
-
 	#title {
 		margin-left: 153px;
 		margin-right: 134px;
-		padding: 10px 0px;
 	}
 
 	#nav-list {
 		padding: 19px 45px;  
-		border-style: solid;
-		border-color: #1b5da5;
-		border-width: 1px;
-		background-color: #1b5da5;
-		/*Uncomment box-shadow lines below if Week View is selected */
-		/*-webkit-box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77); 
-		-moz-box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77);
-		box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77);*/
 	}
 
 
 	#nav-week {
 	padding: 20px 45px;
-	background-color: #1b5da5;
 	margin-left: -4px;
-	/*Uncomment box-shadow lines below if List View is selected */
-	-webkit-box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
-	-moz-box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
-	box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
 	}
 
-	#dropdown-nav {
-		
-		margin: 17px 0px;
-		position: absolute;
-		background-color: rgb(217,217,217);
-	}
-
-	ul#navbar {
-		background-color: black;
-		color: white;
-		padding: 20px 0px 20px 0px;
-	}
-
-	/* When Menu Icon IS Selected */
-	/*
-	li.main-dropdown {
-		padding: 20px 42px;
-		margin: 0px;
-		background-color: rgb(217,217,217);
-		border-style: solid;  border-color: rgb(180,180,180);  border-width: 1px;  
-		border-bottom-color: rgb(217,217,217);
-	}
-
-	ul#navbar a.dropdown-toggle {
-		color: black;
-		font-weight: bold;
-	}
-
-	nav#dropdown-nav {
-		display: initial;
-	}
-
-	#dropdown-nav ul.dropdown-menu {
-		-webkit-margin-before: 1em;
-		-webkit-margin-after: 1em;
-		-webkit-margin-start: 2em;
-		-webkit-margin-end: 2em;
-		-webkit-padding-start: 0px;
-	}*/
 	/* --------------------------- */
 	/* When Menu Icon is NOT Selected */
 	li.main-dropdown {
 		padding: 20px 42px;
-		background-color: black;
-		border-style: none;
-		border-color: black;
-		border-width: 0px;
-		border-bottom-color: black;
-	}
-
-	ul#navbar a.dropdown-toggle {
-		color: white;
-	}
-
-	nav#dropdown-nav {
-		display: none;
-	}
-	/* --------------------------- */
-
-	nav#main-navbar {
-		margin-bottom: 2px;
-
-	}
-
-	nav#main-navbar a {
-	color: white;
-	}
-
-	nav#dropdown-nav ul li {
-		padding: 10px 0px;
-		margin: 0px;
-	}
-
-	.lists-menu {
-		border-bottom-style: solid;
-		border-bottom-color: rgb(180,180,180);
-		border-bottom-width: 1px;
-		padding-bottom: 10px;
-		margin-right: -30px;
-		margin-left: -30px;
-	}
-
-	nav#dropdown-nav ul li {
-		padding: 10px;
-		margin: 0px 4px;
-	}
-
-	.lists-menu {
-		border-bottom-style: solid;  
-		padding-bottom: 10px;
-	}
-
-	nav#dropdown-nav {
-		border-style: solid;      
-		border-color: rgb(180,180,180);      
-		border-width: 1px;
-		border-top-color: rgb(217,217,217);
-	}
-
-	ul#task-lists {
-		margin-left: -30px;
-	}
-
-	/****************************************
-	*     	     TABLE STYLING		*
-	****************************************/
-	#tbl-list > thead > tr > th,
-	#tbl-list > thead > tr > td,
-	#tbl-list > tbody > tr > th,
-	#tbl-list > tbody > tr > td {
-	padding: 10px;
-	line-height: 1.42857143;
-	vertical-align: top;
-	border-top: 1px solid #dddddd;
-	}
-
-	#tbl-list > tbody > tr:nth-child(even) {
-	  background-color: #f9f9f9;
-	}
-
-	table#tbl-list tbody {
-	background-color: rgb(225,225,225);
-	}
-
-	table#tbl-list {
-	background-color: rgb(200,200,200);
 	}
 
 	/****************************************
@@ -772,57 +426,32 @@ button.btn.important-button {
 		margin: 0px -1px;
 	}
 
-	.search-add {
-		border-top-style: solid;
-		border-top-width: 30px;
-		border-top-color: #1b5da5;
-	}
-
 	input.search-add-bar {
 		width: 567px;
-		padding: 9px 0px;
-	
+		padding: 10px 0px;
 		margin: 0px 1px;
-}
+	}
 
 	button.btn.important-button {
 		padding: 11px 0px;
 		width: 121px;
 		position: relative;
 		left: -5px;
-		background-color: #FFC000;
-		border-color: black;
-		border-width: 1px;
 	}
 }
 
+
+/******************************************************
+*********  STYLING BETWEEN 1000PX and 1279PX  *********
+******************************************************/
 @media all and (min-width: 1000px) and (max-width:1279px) {
 	html {
-		width: 1000px;
-	
+		width: 1000.5px;
 		margin: auto;
-}
-	/****************************************
-	*  	  GENERAL STYLING	   	*
-	****************************************/
-	*:before, *:after {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 	}
 
 	body {
 		margin: 20px 31.25px;
-	}
-
-	table {
-	  border-collapse: collapse;
-	  border-spacing: 0;
-	}
-
-	td,
-	th {
-	  padding: 0;
 	}
 
 	th {
@@ -834,35 +463,9 @@ button.btn.important-button {
 	width: 937px;
 	}
 
-	ul.navbar {
-		list-style: none;
-	}
-
-
 	/****************************************
 	*	     NAVBAR STYLING		*
 	****************************************/
-	nav li {
-		list-style: none;
-	}
-
-	nav a {
-		text-decoration: none;
-	}
-
-	nav#main-navbar ul {
-		display: inline;
-		text-decoration: none;
-	}
-
-	nav#main-navbar ul li {
-		display: inline;
-	}
-
-	#navbar {
-		padding:0;
-	}
-
 	#title {
 		margin-left: 300px;
 		margin-right: 237px;
@@ -871,38 +474,18 @@ button.btn.important-button {
 
 	#nav-list {
 		padding: 19px 45px;  
-		border-style: solid;
-		border-color: #1b5da5;
-		border-width: 1px;
-		background-color: #1b5da5;
-		/*Uncomment box-shadow lines below if Week View is selected */
-		/*-webkit-box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77); 
-		-moz-box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77);
-		box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77);*/
 	}
 
 
 	#nav-week {
 	padding: 20px 45px;
-	background-color: #1b5da5;
 	margin-left: -4px;
-	/*Uncomment box-shadow lines below if List View is selected */
-	-webkit-box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
-	-moz-box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
-	box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
 	}
 
 	#dropdown-nav {
 		
 		margin: 17px 0px;
 		position: absolute;
-		background-color: rgb(217,217,217);
-	}
-
-	ul#navbar {
-		background-color: black;
-		color: white;
-		padding: 20px 0px 20px 0px;
 	}
 
 	/* When Menu Icon IS Selected */
@@ -910,116 +493,13 @@ button.btn.important-button {
 	li.main-dropdown {
 		padding: 20px 42px;
 		margin: 0px;
-		background-color: rgb(217,217,217);
-		border-style: solid;  border-color: rgb(180,180,180);  border-width: 1px;  
-		border-bottom-color: rgb(217,217,217);
-	}
-
-	ul#navbar a.dropdown-toggle {
-		color: black;
-		font-weight: bold;
-	}
-
-	nav#dropdown-nav {
-		display: initial;
-	}
-
-	#dropdown-nav ul.dropdown-menu {
-		-webkit-margin-before: 1em;
-		-webkit-margin-after: 1em;
-		-webkit-margin-start: 2em;
-		-webkit-margin-end: 2em;
-		-webkit-padding-start: 0px;
 	}*/
-	/* --------------------------- */
+
 	/* When Menu Icon is NOT Selected */
 	li.main-dropdown {
 		padding: 20px 42px;
-		background-color: black;
-		border-style: none;
-		border-color: black;
-		border-width: 0px;
-		border-bottom-color: black;
 	}
-
-	ul#navbar a.dropdown-toggle {
-		color: white;
-	}
-
-	nav#dropdown-nav {
-		display: none;
-	}
-	/* --------------------------- */
-
-	nav#main-navbar {
-		margin-bottom: 2px;
-
-	}
-
-	nav#main-navbar a {
-	color: white;
-	}
-
-	nav#dropdown-nav ul li {
-		padding: 10px 0px;
-		margin: 0px;
-	}
-
-	.lists-menu {
-		border-bottom-style: solid;
-		border-bottom-color: rgb(180,180,180);
-		border-bottom-width: 1px;
-		padding-bottom: 10px;
-		margin-right: -30px;
-		margin-left: -30px;
-	}
-
-	nav#dropdown-nav ul li {
-		padding: 10px;
-		margin: 0px 4px;
-	}
-
-	.lists-menu {
-		border-bottom-style: solid;  
-		padding-bottom: 10px;
-	}
-
-	nav#dropdown-nav {
-		border-style: solid;      
-		border-color: rgb(180,180,180);      
-		border-width: 1px;
-		border-top-color: rgb(217,217,217);
-	}
-
-	ul#task-lists {
-		margin-left: -30px;
-	}
-
-	/****************************************
-	*     	     TABLE STYLING		*
-	****************************************/
-	#tbl-list > thead > tr > th,
-	#tbl-list > thead > tr > td,
-	#tbl-list > tbody > tr > th,
-	#tbl-list > tbody > tr > td {
-	padding: 10px;
-	line-height: 1.42857143;
-	vertical-align: top;
-	border-top: 1px solid #dddddd;
-	}
-
-	#tbl-list > tbody > tr:nth-child(even) {
-	  background-color: #f9f9f9;
-	}
-
-	table#tbl-list tbody {
-	background-color: rgb(225,225,225);
-	}
-
-	table#tbl-list {
-	background-color: rgb(200,200,200);
-	}
-
+	
 	/****************************************
 	*	SEARCH/ADD BUTTON STYLING       *
 	****************************************/
@@ -1028,16 +508,9 @@ button.btn.important-button {
 		margin: 0px -1px;
 	}
 
-	.search-add {
-		border-top-style: solid;
-		border-top-width: 30px;
-		border-top-color: #1b5da5;
-	}
-
 	input.search-add-bar {
 		width: 817px;
 		padding: 10px 0px;
-	
 		margin: 0px 1px;
 	}
 
@@ -1046,235 +519,56 @@ button.btn.important-button {
 		width: 121px;
 		position: relative;
 		left: -5px;
-		background-color: #FFC000;
-		border-color: black;
-		border-width: 1px;
 	}
 }
 
+
+
+/******************************************************
+*************  STYLING GREATER THAN 1280PX	***********
+******************************************************/
 @media all and (min-width:1280px) {
 	html {
 		width: 1280px;
 		margin:auto;
-	}
-	/****************************************
-	*  	  GENERAL STYLING	   	*
-	****************************************/
-	*:before, *:after {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 	}
 
 	body {
 		margin: 20px 40px;
 	}
 
-	table {
-	  border-collapse: collapse;
-	  border-spacing: 0;
-	}
-
-	td,
-	th {
-	  padding: 0;
-	}
-
-	th {
-	text-align: left;
-	padding-right: 400px;
-	}
-
 	table#tbl-list {
-	width: 1200px;
-	}
-
-	ul.navbar {
-		list-style: none;
+		width: 1200px;
 	}
 
 
 	/****************************************
 	*	     NAVBAR STYLING		*
 	****************************************/
-	nav li {
-		list-style: none;
-	}
-
-	nav a {
-		text-decoration: none;
-	}
-
-	nav#main-navbar ul {
-		display: inline;
-		text-decoration: none;
-	}
-
-	nav#main-navbar ul li {
-		display: inline;
-	}
-
-	#navbar {
-		padding:0;
-	}
-
 	#title {
 		margin-left: 450px;
 		margin-right: 349px;
-		padding: 10px 0px;
 	}
 
 	#nav-list {
-		padding: 19px 45px;  
-		border-style: solid;
-		border-color: #1b5da5;
-		border-width: 1px;
-		background-color: #1b5da5;
-		/*Uncomment box-shadow lines below if Week View is selected */
-		/*-webkit-box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77); 
-		-moz-box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77);
-		box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77);*/
+		padding: 19px 45px;
 	}
 
 
 	#nav-week {
 	padding: 20px 45px;
-	background-color: #1b5da5;
 	margin-left: -4px;
-	/*Uncomment box-shadow lines below if List View is selected */
-	-webkit-box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
-	-moz-box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
-	box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
-	}
-
-	#dropdown-nav {
-		padding:10;
-		margin: -2px 0px;
-		position: fixed;
-		background-color: rgb(217,217,217);
-	}
-
-	ul#navbar {
-		background-color: black;
-		color: white;
-		padding: 20px 0px 20px 0px;
 	}
 
 	/* When Menu Icon IS Selected *//*
-
 	li.main-dropdown {
 		padding: 20px 42px;
 		margin: 0px;
-		background-color: rgb(217,217,217);
-		border-style: solid;
-		border-color: rgb(180,180,180);
-		border-width: 1px;  
-		border-bottom-color: rgb(217,217,217);
-	}
-
-	ul#navbar a.dropdown-toggle {
-		color: black;
-		font-weight: bold;
-	}
-
-	nav#dropdown-nav {
-		display: initial;
-	}
-
-	#dropdown-nav ul.dropdown-menu {
-		-webkit-margin-before: 1em;
-		-webkit-margin-after: 1em;
-		-webkit-margin-start: 2em;
-		-webkit-margin-end: 2em;
-		-webkit-padding-start: 0px;
-	}
-	*//* --------------------------- */
+	}*/
 	/* When Menu Icon is NOT Selected */
 	li.main-dropdown {
 		padding: 20px 42px;
-		background-color: black;
-		border-style: none;
-		border-color: black;
 		border-width: 0px;
-		border-bottom-color: black;
-	}
-
-	ul#navbar a.dropdown-toggle {
-		color: white;
-	}
-
-	nav#dropdown-nav {
-		display: none;
-	}
-	/* --------------------------- */
-
-	nav#main-navbar {
-		margin-bottom: 2px;
-
-	}
-
-	nav#main-navbar a {
-	color: white;
-	}
-
-	nav#dropdown-nav ul li {
-		padding: 10px 0px;
-		margin: 0px;
-	}
-
-	.lists-menu {
-		border-bottom-style: solid;
-		border-bottom-color: rgb(180,180,180);
-		border-bottom-width: 1px;
-		padding-bottom: 10px;
-		margin-right: -30px;
-		margin-left: -30px;
-	}
-
-	nav#dropdown-nav ul li {
-		padding: 10px;
-		margin: 0;
-	}
-
-	.lists-menu {
-		border-bottom-style: solid;  
-		padding-bottom: 10px;
-	}
-
-	nav#dropdown-nav {
-		border-style: solid;      
-		border-color: rgb(180,180,180);      
-		border-width: 1px;
-		border-top-color: rgb(217,217,217);
-	}
-
-	ul#task-lists {
-		margin-left: -30px;
-	}
-
-	/****************************************
-	*     	     TABLE STYLING		*
-	****************************************/
-	#tbl-list > thead > tr > th,
-	#tbl-list > thead > tr > td,
-	#tbl-list > tbody > tr > th,
-	#tbl-list > tbody > tr > td {
-	padding: 10px;
-	line-height: 1.42857143;
-	vertical-align: top;
-	border-top: 1px solid #dddddd;
-	}
-
-	#tbl-list > tbody > tr:nth-child(even) {
-	  background-color: #f9f9f9;
-	}
-
-	table#tbl-list tbody {
-	background-color: rgb(225,225,225);
-	}
-
-	table#tbl-list {
-	background-color: rgb(200,200,200);
 	}
 
 	/****************************************
@@ -1283,12 +577,6 @@ button.btn.important-button {
 	.search-task {
 		width: 1205px;
 		margin: 0px 0px;
-	}
-
-	.search-add {
-		border-top-style: solid;
-		border-top-width: 30px;
-		border-top-color: #1b5da5;
 	}
 
 	input.search-add-bar {
@@ -1301,8 +589,5 @@ button.btn.important-button {
 		width: 120px;
 		position: relative;
 		left: -5px;
-		background-color: #FFC000;
-		border-color: black;
-		border-width: 1px;
 	}
 }
