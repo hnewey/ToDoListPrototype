@@ -65,22 +65,25 @@ nav#main-navbar ul li {
 }
 
 #title {
-    margin-left: 38.02%;
+    margin-left: 37.4%;
     margin-right: 30%;
     padding: 10px 0px;
 }
 
 #nav-list {
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-    padding: 10px;
+    padding: 1.6% 3.5%;  
+    border-style: solid;
+    border-color: #1b5da5;
+    border-width: 1px;
+    background-color: #1b5da5;
+    -webkit-box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77); -moz-box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77); box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77);
 }
 
 
 #nav-week {
-  margin-left: 2.5%;
-  margin-right: 2.5%;
-  padding: 10px;
+padding: 1.7% 3.7%;
+background-color: #1b5da5;
+margin-left: -4px;
 }
 
 #dropdown-nav {
@@ -96,6 +99,8 @@ ul#navbar {
     padding: 20px 0px 20px 0px;
 }
 
+/* When Menu Icon IS Selected *//*
+
 li.main-dropdown {
     padding: 20px 3.5%;
     margin: 0px;
@@ -109,10 +114,13 @@ ul#navbar a.dropdown-toggle {
     font-weight: bold;
 }
 
-/*//TOGGLE FOR JQUERY FOR MENU ICON CLICK
+nav#dropdown-nav {
+	display: initial;
+}
+*//* --------------------------- */
+/* When Menu Icon is NOT Selected */
 li.main-dropdown {
 	padding: 20px 3.5%;
-	margin: 0px;
 	background-color: black;
 	border-style: none;
 	border-color: black;
@@ -127,7 +135,7 @@ ul#navbar a.dropdown-toggle {
 nav#dropdown-nav {
 	display: none;
 }
-*/
+/* --------------------------- */
 #dropdown-nav ul.dropdown-menu {
 	-webkit-margin-before: 1em;
 	-webkit-margin-after: 1em;
@@ -138,7 +146,7 @@ nav#dropdown-nav {
 }
 
 nav#main-navbar {
-    margin-bottom: 20px;
+    margin-bottom: 2px;
 
 }
 
@@ -210,16 +218,27 @@ background-color: rgb(200,200,200);
 *	SEARCH/ADD BUTTON STYLING       *
 ****************************************/
 .search-task {
-    width: 100%;
-    margin: 0.5% 0px;
+    width: 101%;
+    margin: 0px 0px;
+}
+
+.search-add {
+    border-top-style: solid;
+    border-top-width: 30px;
+    border-top-color: #1b5da5;
 }
 
 input.search-add-bar {
-    width: 89.3%;
+    width: 88.8%;
     padding: 10px 0px;
 }
 
 button.btn.important-button {
     padding: 10px 0px;
     width: 10%;
+    position: relative;
+    left: -5px;
+    background-color: #FFC000;
+    border-color: black;
+    border-width: 2px;
 }
