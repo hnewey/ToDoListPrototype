@@ -17,6 +17,7 @@ function showListTab()
 
 function renderListTable()
 {
+  $('#weekly-header-bar').html('');
   $('#tbl-list tbody').html('');
   $(filteredData).each(function(index, task) {
     var tr = $('<tr>');
