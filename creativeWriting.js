@@ -29,6 +29,6 @@ var creativeWritingList = [
 		"due": new Date("December 7, 2014 1:13:00"),
 		"priority": "High",
 		"list": "Creative Writing",
-		"completed": false
+		"completed": true
 	},
 ];
