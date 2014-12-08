@@ -43,6 +43,18 @@ function completeTask(id){
   renderListTable();
 }
 
+function completeTaskWeek(id){
+  
+  for (i=0;i<data.length;i++) {
+    var task = data[i];
+    if (task.id === id) {
+      task.completed = true;
+      break;
+    }
+  }
+  renderWeeklyTable();
+}
+
 function searchData(input){
   filteredData = data;
   if (input === '' || input === ' ' || input == null || input == '   Search Tasks / Quick Add') {
@@ -181,16 +193,19 @@ function renderWeeklyTable() {
 
     var firstTime = true;
     for (var task of tasksArr) {
-      if (firstTime) {
-        $('#tbl-list tbody').append('<tr><td id="date-row" colspan="3">' + daysOfTheWeek[task.due.getDay()] + ', ' + monthsOfTheYear[task.due.getMonth()] + ' ' + task.due.getDate() + '</td></tr>');
-        firstTime = false;
-      }
+      if (task.completed === false) {
+	if (firstTime) {
+          $('#tbl-list tbody').append('<tr><td id="date-row" colspan="4">' + daysOfTheWeek[task.due.getDay()] + ', ' + monthsOfTheYear[task.due.getMonth()] + ' ' + task.due.getDate() + '</td></tr>');
+          firstTime = false;
+        }
 
-       var tr = $('<tr>');
+      var tr = $('<tr>');
+      $(tr).append("<td><input type='checkbox' align='center' onclick='completeTaskWeek("+task.id+")'></td> ");
       $(tr).append('<td>'+task.name+'</td>');
       $(tr).append('<td>'+getReadableDate(task.due)+'</td>');
       $(tr).append('<td>'+task.priority+'</td>');
       $('#tbl-list tbody').append(tr);
+      }
     }
   }
 
