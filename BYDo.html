@@ -63,7 +63,7 @@
 	<div class="search-add">
 		<form role="search">
 			<div class="search-task">
-			<input type="text" class="search-add-bar" placeholder="   Search Tasks / Quick Add">
+			<input type="text" class="search-add-bar" placeholder="   Search Tasks / Quick Add" onkeypress="searchData(this.value)" onchange="this.onkeypress()" onpaste="this.onkeypress()" oninput="this.onkeypress()" >
 			<button type="submit" class="btn important-button">Add Task</button>
 			</div>
 		</form>

@@ -43,6 +43,24 @@ function completeTask(id){
   renderListTable();
 }
 
+function searchData(input){
+  filteredData = data;
+  if (input === '' || input === ' ' || input == null || input == '   Search Tasks / Quick Add') {
+    renderListTable();
+    return;
+  }
+   input = input.toLowerCase();
+  var temFilter = [];
+  for (i=0;i<filteredData.length;i++) {
+    var task = filteredData[i];
+    if (task.name.toLowerCase().indexOf(input) > -1) {
+      temFilter.push(filteredData[i]);
+    }
+  }
+  filteredData = temFilter;
+  renderListTable();
+}
+
 function getReadableDate(date)
 {
   return (date.getMonth() + 1) + '/' + date.getDate() + ' ' + zeroPad(2, date.getHours()) + ':' + zeroPad(2, date.getMinutes());
