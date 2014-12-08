@@ -11,7 +11,19 @@ function showListTab()
 {
   $('#tbl-day').hide();
   $('#tbl-list').show();
-  filteredData = data;
+  copyDataToFiltered();
+  renderListTable();
+}
+
+function copyDataToFiltered(){
+  filteredData = [];
+  $(data).each(function(index, task) {
+    filteredData.push(task);
+  });
+}
+
+function renderApropriateTable(){
+  //Some Logic Will Go Here
   renderListTable();
 }
 
@@ -33,8 +45,8 @@ function renderListTable()
 
 function completeTask(id){
   
-  for (i=0;i<data.length;i++) {
-    var task = data[i];
+  for (i=0;i<filteredData.length;i++) {
+    var task = filteredData[i];
     if (task.id === id) {
       task.completed = true;
       break;
@@ -45,8 +57,8 @@ function completeTask(id){
 
 function completeTaskWeek(id){
   
-  for (i=0;i<data.length;i++) {
-    var task = data[i];
+  for (i=0;i<filteredData.length;i++) {
+    var task = filteredData[i];
     if (task.id === id) {
       task.completed = true;
       break;
@@ -55,13 +67,31 @@ function completeTaskWeek(id){
   renderWeeklyTable();
 }
 
+function showAllLists(){
+  copyDataToFiltered();
+  $(creativeWritingList).each(function(index, task) {
+    filteredData.push(task);
+  });
+  $(listThree).each(function(index, task) {
+    filteredData.push(task);
+  });
+  renderApropriateTable();
+}
+
+function resetToCurrentList(){
+  showAllLists();
+}
+
 function searchData(input){
-  filteredData = data;
+  //I still need to come up with a way to specify a list before searching so it doesnt always use this one
+  resetToCurrentList();
+  
   if (input === '' || input === ' ' || input == null || input == '   Search Tasks / Quick Add') {
     renderListTable();
     return;
   }
-   input = input.toLowerCase();
+  
+  input = input.toLowerCase();
   var temFilter = [];
   for (i=0;i<filteredData.length;i++) {
     var task = filteredData[i];
@@ -70,7 +100,11 @@ function searchData(input){
     }
   }
   filteredData = temFilter;
-  renderListTable();
+  
+  //At the moment I am unsure how we should determine if we are searching on list view or week view.
+  //Maybe make a seperate search bar for each List and Week view and include which bar is being searched
+  //from as an arguement to this function so I know which to render in.
+  renderApropriateTable()
 }
 
 function getReadableDate(date)
