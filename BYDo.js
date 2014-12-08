@@ -21,11 +21,26 @@ function renderListTable()
   $('#tbl-list tbody').html('');
   $(filteredData).each(function(index, task) {
     var tr = $('<tr>');
-    $(tr).append('<td>'+task.name+'</td>');
-    $(tr).append('<td>'+getReadableDate(task.due)+'</td>');
-    $(tr).append('<td>'+task.priority+'</td>');
-    $('#tbl-list tbody').append(tr);
+    if (task.completed === false) {
+      $(tr).append("<td><input type='checkbox' align='center' onclick='completeTask("+task.id+")'></td> ");
+      $(tr).append('<td>'+task.name+'</td>');
+      $(tr).append('<td>'+getReadableDate(task.due)+'</td>');
+      $(tr).append('<td>'+task.priority+'</td>');
+      $('#tbl-list tbody').append(tr);
+    }
   });
+}
+
+function completeTask(id){
+  
+  for (i=0;i<data.length;i++) {
+    var task = data[i];
+    if (task.id === id) {
+      task.completed = true;
+      break;
+    }
+  }
+  renderListTable();
 }
 
 function getReadableDate(date)
@@ -176,40 +191,52 @@ function uploadImageData() {
   
   data.push(
     {
+    "id": curID,
     "name": "Mariah Torres Wedding",
     "due": new Date("December 13, 2014 18:00:00"),
     "priority": "High",
-    "list": "Personal"
+    "list": "Personal",
+    "completed": false
     }
   );
-
+  curID++;
+  
   data.push(
     {
+    "id": curID,
     "name": "Primary Party",
     "due": new Date("December 20, 2014 18:00:00"),
     "priority": "High",
-    "list": "Personal"
+    "list": "Personal",
+    "completed": false
     }
   );
-
+  curID++;
+  
   data.push(
     {
+    "id": curID,
     "name": "Devin's B-day",
     "due": new Date("December 21, 2014 0:00:00"),
     "priority": "High",
-    "list": "Personal"
+    "list": "Personal",
+    "completed": false
     }
   );
-
+  curID++;
+  
   data.push(
     {
+    "id": curID,
     "name": "Due Date :)",
     "due": new Date("December 29, 2014 18:00:00"),
     "priority": "High",
-    "list": "Personal"
+    "list": "Personal",
+    "completed": false
     }
   );
-
+  curID++;
+  
   imageOverlay();
   showListTab();
 }
