@@ -78,6 +78,27 @@ function showAllLists(){
   renderApropriateTable();
 }
 
+function showMyList(){
+  copyDataToFiltered();
+  renderApropriateTable();
+}
+
+function showCWList(){
+  filteredData = [];
+  $(creativeWritingList).each(function(index, task) {
+    filteredData.push(task);
+  });
+  renderApropriateTable();
+}
+
+function showListThree(){
+  filteredData = [];
+  $(listThree).each(function(index, task) {
+    filteredData.push(task);
+  });
+  renderApropriateTable();
+}
+
 function resetToCurrentList(){
   showAllLists();
 }
