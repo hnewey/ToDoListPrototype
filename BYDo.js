@@ -99,6 +99,54 @@ function showListThree(){
   renderApropriateTable();
 }
 
+function showCompleted(){
+  filteredData = [];
+  $(data).each(function(index, task) {
+    if (task.completed == true) {
+      filteredData.push(task);
+    }
+  });
+  $(creativeWritingList).each(function(index, task) {
+    if (task.completed == true) {
+      filteredData.push(task);
+    }
+  });
+  $(listThree).each(function(index, task) {
+    if (task.completed == true) {
+      filteredData.push(task);
+    }
+  });
+  renderCompletedTable();
+}
+
+function renderCompletedTable()
+{
+  $('#weekly-header-bar').html('');
+  $('#tbl-list tbody').html('');
+  $(filteredData).each(function(index, task) {
+    var tr = $('<tr>');
+    if (task.completed === true) {
+      $(tr).append("<td><input type='checkbox' align='center' onclick='uncompleteTask("+task.id+")' checked></td> ");
+      $(tr).append('<td><strike>'+task.name+'</strike></td>');
+      $(tr).append('<td><strike>'+getReadableDate(task.due)+'</strike></td>');
+      $(tr).append('<td><strike>'+task.priority+'</strike></td>');
+      $('#tbl-list tbody').append(tr);
+    }
+  });
+}
+
+function uncompleteTask(id){
+  
+  for (i=0;i<filteredData.length;i++) {
+    var task = filteredData[i];
+    if (task.id === id) {
+      task.completed = false;
+      break;
+    }
+  }
+  renderCompletedTable();
+}
+
 function resetToCurrentList(){
   showAllLists();
 }
