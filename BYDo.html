@@ -12,6 +12,8 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script src="./data.js"></script>
+    <script src="./creativeWriting.js"></script>
+    <script src="./listThree.js"></script>
     <script src="./BYDo.js"></script>
 </head>
 	<nav id="main-navbar">
@@ -37,10 +39,11 @@
 	  	</a>
 	  	<ul class="lists-menu" role="menu" id="task-lists">
 	  	  <!-- Dynamic Task Lists Items Will go here (Below are placeholders -->
-	  	  <li>All</li>
-	  	  <li>List 1</li>
-	  	  <li>List 2</li>
-	  	  <li>List 3</li>
+	  	  <li><a href="#" onclick="Javascript:showAllLists()">All</a></li>
+	  	  <li><a href="#" onclick="Javascript:showMyList()">My List</a></li>
+	  	  <li><a href="#" onclick="Javascript:showCWList()">Creative Writing</a></li>
+	  	  <li><a href="#" onclick="Javascript:showListThree()">List 3</a></li>
+		  <li><a href="#" onclick="Javascript:showCompleted()">Completed</a></li>
 	  	  <li><span class="add"></span><a href="#">Add List</a></li>
 	  	</ul>
 	    </li>
@@ -65,7 +68,7 @@
 	<div class="search-add">
 		<form role="search">
 			<div class="search-task">
-			<input type="text" class="search-add-bar" placeholder="   Search Tasks / Quick Add">
+			<input type="text" class="search-add-bar" placeholder="   Search Tasks / Quick Add" onkeypress="searchData(this.value)" onchange="this.onkeypress()" onpaste="this.onkeypress()" oninput="this.onkeypress()" >
 			<button type="submit" class="btn important-button">Add Task</button>
 			</div>
 		</form>

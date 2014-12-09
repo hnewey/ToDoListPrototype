@@ -11,7 +11,19 @@ function showListTab()
 {
   $('#tbl-day').hide();
   $('#tbl-list').show();
-  filteredData = data;
+  copyDataToFiltered();
+  renderListTable();
+}
+
+function copyDataToFiltered(){
+  filteredData = [];
+  $(data).each(function(index, task) {
+    filteredData.push(task);
+  });
+}
+
+function renderApropriateTable(){
+  //Some Logic Will Go Here
   renderListTable();
 }
 
@@ -52,14 +64,141 @@ function confirmDeletion(self, id){
 }
 
 function completeTask(id){
+<<<<<<< HEAD
   for (i=0;i<data.length;i++) {
     var task = data[i];
+=======
+  
+  for (i=0;i<filteredData.length;i++) {
+    var task = filteredData[i];
+>>>>>>> a4a7ac6b5f73ec0c86680add9091d082d2e65ea3
     if (task.id === id) {
       task.completed = true;
       break;
     }
   }
   renderListTable();
+}
+
+function completeTaskWeek(id){
+  
+  for (i=0;i<filteredData.length;i++) {
+    var task = filteredData[i];
+    if (task.id === id) {
+      task.completed = true;
+      break;
+    }
+  }
+  renderWeeklyTable();
+}
+
+function showAllLists(){
+  copyDataToFiltered();
+  $(creativeWritingList).each(function(index, task) {
+    filteredData.push(task);
+  });
+  $(listThree).each(function(index, task) {
+    filteredData.push(task);
+  });
+  renderApropriateTable();
+}
+
+function showMyList(){
+  copyDataToFiltered();
+  renderApropriateTable();
+}
+
+function showCWList(){
+  filteredData = [];
+  $(creativeWritingList).each(function(index, task) {
+    filteredData.push(task);
+  });
+  renderApropriateTable();
+}
+
+function showListThree(){
+  filteredData = [];
+  $(listThree).each(function(index, task) {
+    filteredData.push(task);
+  });
+  renderApropriateTable();
+}
+
+function showCompleted(){
+  filteredData = [];
+  $(data).each(function(index, task) {
+    if (task.completed == true) {
+      filteredData.push(task);
+    }
+  });
+  $(creativeWritingList).each(function(index, task) {
+    if (task.completed == true) {
+      filteredData.push(task);
+    }
+  });
+  $(listThree).each(function(index, task) {
+    if (task.completed == true) {
+      filteredData.push(task);
+    }
+  });
+  renderCompletedTable();
+}
+
+function renderCompletedTable()
+{
+  $('#weekly-header-bar').html('');
+  $('#tbl-list tbody').html('');
+  $(filteredData).each(function(index, task) {
+    var tr = $('<tr>');
+    if (task.completed === true) {
+      $(tr).append("<td><input type='checkbox' align='center' onclick='uncompleteTask("+task.id+")' checked></td> ");
+      $(tr).append('<td><strike>'+task.name+'</strike></td>');
+      $(tr).append('<td><strike>'+getReadableDate(task.due)+'</strike></td>');
+      $(tr).append('<td><strike>'+task.priority+'</strike></td>');
+      $('#tbl-list tbody').append(tr);
+    }
+  });
+}
+
+function uncompleteTask(id){
+  
+  for (i=0;i<filteredData.length;i++) {
+    var task = filteredData[i];
+    if (task.id === id) {
+      task.completed = false;
+      break;
+    }
+  }
+  renderCompletedTable();
+}
+
+function resetToCurrentList(){
+  showAllLists();
+}
+
+function searchData(input){
+  //I still need to come up with a way to specify a list before searching so it doesnt always use this one
+  resetToCurrentList();
+  
+  if (input === '' || input === ' ' || input == null || input == '   Search Tasks / Quick Add') {
+    renderListTable();
+    return;
+  }
+  
+  input = input.toLowerCase();
+  var temFilter = [];
+  for (i=0;i<filteredData.length;i++) {
+    var task = filteredData[i];
+    if (task.name.toLowerCase().indexOf(input) > -1) {
+      temFilter.push(filteredData[i]);
+    }
+  }
+  filteredData = temFilter;
+  
+  //At the moment I am unsure how we should determine if we are searching on list view or week view.
+  //Maybe make a seperate search bar for each List and Week view and include which bar is being searched
+  //from as an arguement to this function so I know which to render in.
+  renderApropriateTable()
 }
 
 function getReadableDate(date)
@@ -182,16 +321,19 @@ function renderWeeklyTable() {
 
     var firstTime = true;
     for (var task of tasksArr) {
-      if (firstTime) {
-        $('#tbl-list tbody').append('<tr><td id="date-row" colspan="3">' + daysOfTheWeek[task.due.getDay()] + ', ' + monthsOfTheYear[task.due.getMonth()] + ' ' + task.due.getDate() + '</td></tr>');
-        firstTime = false;
-      }
+      if (task.completed === false) {
+	if (firstTime) {
+          $('#tbl-list tbody').append('<tr><td id="date-row" colspan="4">' + daysOfTheWeek[task.due.getDay()] + ', ' + monthsOfTheYear[task.due.getMonth()] + ' ' + task.due.getDate() + '</td></tr>');
+          firstTime = false;
+        }
 
-       var tr = $('<tr>');
+      var tr = $('<tr>');
+      $(tr).append("<td><input type='checkbox' align='center' onclick='completeTaskWeek("+task.id+")'></td> ");
       $(tr).append('<td>'+task.name+'</td>');
       $(tr).append('<td>'+getReadableDate(task.due)+'</td>');
       $(tr).append('<td>'+task.priority+'</td>');
       $('#tbl-list tbody').append(tr);
+      }
     }
   }
 
