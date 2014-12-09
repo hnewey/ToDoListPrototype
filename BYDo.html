@@ -68,8 +68,8 @@
 	<div class="search-add">
 		<form role="search">
 			<div class="search-task">
-			<input id='searchBar' type="text" class="search-add-bar" placeholder="   Search Tasks / Quick Add" onkeypress="searchData(this.value)" onchange="this.onkeypress()" onpaste="this.onkeypress()" oninput="this.onkeypress()" >
-			<button type="submit" class="btn important-button">Add Task</button>
+			<input id='searchBar' type="text" class="search-add-bar" placeholder="   Search Tasks" onkeypress="searchData(this.value)" onchange="this.onkeypress()" onpaste="this.onkeypress()" oninput="this.onkeypress()" >
+			<button type="submit" class="btn important-button" onclick="createTaskMenu()">Add Task</button>
 			</div>
 		</form>
 	</div>
@@ -101,7 +101,25 @@
     </div>
 
     <div id="checkDeletion" title="Remove Task?" style="display:none">
-        <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This task will be permanently removed. Are you sure?</p>
+        <!--<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This task will be permanently removed. Are you sure?</p>-->
+    </div>
+
+    <div id="addTaskMenu" titie="Add Task" style="display:none">
+        <form>
+            <fieldset>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" value="New Name" class="text ui-widget-content ui-corner-all">
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" value="" class="text ui-widget-content ui-corner-all">
+                <label for="due">Due</label>
+                <input type="text" name="due" id="due" value="10:00" class="text ui-widget-content ui-corner-all">
+                <label for="category">Category</label>
+                <input type="text" name="category" id="category" value="Creative Writing" class="text ui-corner-all">
+                <!-- Allow form submission with keyboard without duplicating the dialog button -->
+                <input type="submit" tabindex="-1">
+                <!--<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">-->
+            </fieldset>
+        </form>
     </div>
     </body>
 </html>

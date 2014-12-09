@@ -101,7 +101,7 @@ function renderListTable()
   });
 }
 
-<!-- If we want to confirmation dialogue for checking off tasks, uncomment this code and the line commented out above -->
+<!-- If we want the confirmation dialogue for checking off tasks, uncomment this code and the line commented out above -->
 //function confirmDeletion(self, id){
 //    if($(self).prop("checked")){
 //        $("#checkDeletion").dialog({
@@ -273,6 +273,16 @@ function zeroPad(length, val)
   }
 
   return val;
+}
+
+function createTaskMenu(){
+    $("#addTaskMenu").dialog({
+        modal: true,
+        draggable: true,
+        height: 600,
+        width: 450,
+        resizable: false
+    });
 }
 
 //BELOW SHOULD PROBABLY MORE SIMPLE THROUGH JQUERY -- THIS WAS OLD CODE I HAD THAT WORKS
