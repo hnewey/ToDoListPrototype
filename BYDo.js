@@ -121,14 +121,8 @@ function confirmDeletion(self, id){
 }
 
 function completeTask(id){
-<<<<<<< HEAD
-  for (i=0;i<data.length;i++) {
-    var task = data[i];
-=======
-  
   for (i=0;i<filteredData.length;i++) {
     var task = filteredData[i];
->>>>>>> a4a7ac6b5f73ec0c86680add9091d082d2e65ea3
     if (task.id === id) {
       task.completed = true;
       break;
