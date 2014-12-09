@@ -22,7 +22,7 @@ function renderListTable()
   $(filteredData).each(function(index, task) {
     var tr = $('<tr>');
     if (task.completed === false) {
-      $(tr).append("<td><input type='checkbox' align='center' onclick='completeTask("+task.id+")'></td> ");
+      $(tr).append("<td><input type='checkbox' align='center' onclick='confirmDeletion(this, "+task.id+")'></td> ");
       $(tr).append('<td>'+task.name+'</td>');
       $(tr).append('<td>'+getReadableDate(task.due)+'</td>');
       $(tr).append('<td>'+task.priority+'</td>');
@@ -31,8 +31,27 @@ function renderListTable()
   });
 }
 
+function confirmDeletion(self, id){
+    if($(self).prop("checked")){
+        $("#checkDeletion").dialog({
+            modal: true,
+            resizable: false,
+            height: 140,
+            buttons: {
+                "Yes": function() {
+                    $( this ).dialog( "close" );
+                    completeTask(id);
+                },
+                Cancel: function() {
+                    $( this ).dialog( "close" );
+                    $(self).prop("checked", false);
+                }
+            }
+        });
+    }
+}
+
 function completeTask(id){
-  
   for (i=0;i<data.length;i++) {
     var task = data[i];
     if (task.id === id) {
