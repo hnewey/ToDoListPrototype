@@ -66,12 +66,10 @@
 	
     <body>
 	<div class="search-add">
-		<form role="search">
 			<div class="search-task">
 			<input id='searchBar' type="text" class="search-add-bar" placeholder="   Search Tasks" onkeypress="searchData(this.value)" onchange="this.onkeypress()" onpaste="this.onkeypress()" oninput="this.onkeypress()" >
-			<button type="submit" class="btn important-button" onclick="createTaskMenu()">Add Task</button>
+			<button class="btn important-button" onclick="createTaskMenu()">Add Task</button>
 			</div>
-		</form>
 	</div>
 	
 	<div id="weekly-header-bar">
@@ -104,21 +102,148 @@
         <!--<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This task will be permanently removed. Are you sure?</p>-->
     </div>
 
-    <div id="addTaskMenu" titie="Add Task" style="display:none">
-        <form>
-            <fieldset>
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" value="New Name" class="text ui-widget-content ui-corner-all">
-                <label for="description">Description</label>
-                <input type="text" name="description" id="description" value="" class="text ui-widget-content ui-corner-all">
-                <label for="due">Due</label>
-                <input type="text" name="due" id="due" value="10:00" class="text ui-widget-content ui-corner-all">
-                <label for="category">Category</label>
-                <input type="text" name="category" id="category" value="Creative Writing" class="text ui-corner-all">
-                <!-- Allow form submission with keyboard without duplicating the dialog button -->
-                <input type="submit" tabindex="-1">
-                <!--<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">-->
-            </fieldset>
+    <div id="addTaskMenu" title="Add Task" style="display:none">
+        <form id="addTaskForm">
+            <table id="outerTable">
+                <!--Name Table-->
+                <tr>
+                    <td>
+                        <div>
+                            <table class="rows" id="nameTable">
+                                <tr>
+                                    <td>
+                                        <label class ="labels" id="nameLabel" for="nameInput">Name:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="name" id="nameInput" class="text ui-widget-content ui-corner-all textInput">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <!--Description Table-->
+                <tr>
+                    <td>
+                        <div>
+                            <table class="rows" id="descriptionTable" style="width:100%">
+                                <tr>
+                                    <td>
+                                        <label class="labels" id="descriptionLabel" for="descriptionInput">Description:</label>
+                                        <textarea name="description" id="descriptionInput" class="text ui-widget-content ui-corner-all textInput"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <!--Due and Recurring Table-->
+                <tr>
+                    <td>
+                        <div>
+                            <table class="rows" id="dueRecurringTable">
+                                <tr>
+                                    <td>
+                                        <label class="labels" id="dueLabel" for="dueInput">Due:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="due" id="dueInput" class="text ui-widget-content ui-corner-all textInput">
+                                    </td>
+                                    <td>
+                                        <label class="labels" id="recurringLabel" for="recurringInput">Recurring:</label>
+                                        <input type="checkbox" name="recurring" id="recurringInput">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <!--Category and Priority Table-->
+                <tr>
+                    <td>
+                        <div>
+                            <table class="rows" id="categoryTable">
+                                <tr id="categoryRow">
+                                    <td>
+                                        <label class="labels" id="categoryLabel" for="categoryInput">Category:</label>
+                                    </td>
+                                    <td>
+                                        <select id="categoryInput">
+                                            <option value="myList">My List</option>
+                                            <option value="creativeWriting">Creative Writing</option>
+                                            <option value="list3">List 3</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <label class="labels" id="priorityLabel" for="priorityInput">Priority:</label>
+                                    </td>
+                                    <td>
+                                        <select id="priorityInput">
+                                            <option value="low">Low</option>
+                                            <option value="medium">Med</option>
+                                            <option value="high">High</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <!--Priority and Date Table-->
+                <tr>
+                    <td>
+                        <div>
+                            <table class="rows" id="priorityTable">
+                                <tr>
+                                    <td>
+                                        <label class="labels" id="priorityChangeLabel" for="priorityChangeInput">Change Priority to:</label>
+                                    </td>
+                                    <td>
+                                        <select id="priorityChangeInput">
+                                            <option value="low">Low</option>
+                                            <option value="medium">Med</option>
+                                            <option value="high">High</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <label class="labels" id="dateLabel" for="dateInput">on:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="dateInput">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <!--Reminders Table-->
+                <tr>
+                    <td>
+                        <div>
+                            <table class="rows" id="remindersTable">
+                                <tr>
+                                    <td>
+                                        <label class="labels" id="remindersLabel" for="remindersInput">Reminders:</label>
+                                        <select id="remindersInput">
+                                            <option value="email">Email</option>
+                                            <option value="pushNotification">Push Notification</option>
+                                            <option value="textMessage">Text Message</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select id="reminderTime">
+                                            <option value="5min">5 min</option>
+                                            <option value="10min">10 min</option>
+                                            <option value="30min">30 min</option>
+                                            <option value="1hr">1 hr</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </form>
     </div>
     </body>

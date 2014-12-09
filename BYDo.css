@@ -29,7 +29,49 @@ ul.navbar {
 	list-style: none;
 }
 
-
+/****************************************
+*       ADD TASK MENU STYLING           *
+****************************************/
+#descriptionLabel {
+    display: block;
+}
+.textInput {
+    display: block;
+    width: 400px;
+}
+.fields {
+    padding:0; border:0; margin-top:25px;
+}
+.labels {
+    margin-top: 10px;
+}
+#nameInput {
+    margin-left: 10px;
+}
+.rows {
+    margin-top: 30px;
+}
+#descriptionInput {
+    margin-top: 4px;
+    height: 80px;
+    width: 100%;
+    text-align: left;
+    word-wrap: break-word;
+    resize: none;
+}
+#dueRecurringTable {
+    margin-top: 15px;
+}
+#dueInput {
+    margin-left: 5px;
+    width: 90%;
+}
+#categoryRow {
+    margin-top: 15px;
+}
+#categoryInput {
+    margin-left: 5px;
+}
 /****************************************
 *	     NAVBAR STYLING					*
 ****************************************/

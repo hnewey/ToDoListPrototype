@@ -276,13 +276,23 @@ function zeroPad(length, val)
 }
 
 function createTaskMenu(){
+    $("#addTaskForm")[0].reset();
     $("#addTaskMenu").dialog({
         modal: true,
         draggable: true,
         height: 600,
-        width: 450,
-        resizable: false
+        width: 520,
+        resizable: false,
+        buttons: {
+            "Close": function() {
+                $(this).dialog("close");
+            },
+            "Add": function() {
+                alert("Tasked added");
+            }
+        }
     });
+    $('#dateInput').datepicker();
 }
 
 //BELOW SHOULD PROBABLY MORE SIMPLE THROUGH JQUERY -- THIS WAS OLD CODE I HAD THAT WORKS
