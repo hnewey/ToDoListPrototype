@@ -91,7 +91,8 @@ function renderListTable()
   $(filteredData).each(function(index, task) {
     var tr = $('<tr>');
     if (task.completed === false) {
-      $(tr).append("<td><input type='checkbox' align='center' onclick='confirmDeletion(this, "+task.id+")'></td> ");
+//      $(tr).append("<td><input type='checkbox' align='center' onclick='confirmDeletion(this, "+task.id+")'></td> ");
+      $(tr).append("<td><input type='checkbox' align='center' onclick='completeTask("+task.id+")'></td> ");
       $(tr).append('<td>'+task.name+'</td>');
       $(tr).append('<td>'+getReadableDate(task.due)+'</td>');
       $(tr).append('<td>'+task.priority+'</td>');
@@ -100,25 +101,26 @@ function renderListTable()
   });
 }
 
-function confirmDeletion(self, id){
-    if($(self).prop("checked")){
-        $("#checkDeletion").dialog({
-            modal: true,
-            resizable: false,
-            height: 140,
-            buttons: {
-                "Yes": function() {
-                    $( this ).dialog( "close" );
-                    completeTask(id);
-                },
-                Cancel: function() {
-                    $( this ).dialog( "close" );
-                    $(self).prop("checked", false);
-                }
-            }
-        });
-    }
-}
+<!-- If we want to confirmation dialogue for checking off tasks, uncomment this code and the line commented out above -->
+//function confirmDeletion(self, id){
+//    if($(self).prop("checked")){
+//        $("#checkDeletion").dialog({
+//            modal: true,
+//            resizable: false,
+//            height: 140,
+//            buttons: {
+//                "Yes": function() {
+//                    $( this ).dialog( "close" );
+//                    completeTask(id);
+//                },
+//                Cancel: function() {
+//                    $( this ).dialog( "close" );
+//                    $(self).prop("checked", false);
+//                }
+//            }
+//        });
+//    }
+//}
 
 function completeTask(id){
   for (i=0;i<filteredData.length;i++) {
@@ -144,6 +146,7 @@ function completeTaskWeek(id){
 }
 
 function showAllLists(){
+  $("#dropdown-nav").toggle();
   copyDataToFiltered();
   $(creativeWritingList).each(function(index, task) {
     filteredData.push(task);
@@ -156,12 +159,14 @@ function showAllLists(){
 }
 
 function showMyList(){
+  $("#dropdown-nav").toggle();
   copyDataToFiltered();
   //renderApropriateTable();
   changeListToData();
 }
 
 function showCWList(){
+  $("#dropdown-nav").toggle();
   filteredData = [];
   $(creativeWritingList).each(function(index, task) {
     filteredData.push(task);
@@ -171,6 +176,7 @@ function showCWList(){
 }
 
 function showListThree(){
+  $("#dropdown-nav").toggle();
   filteredData = [];
   $(listThree).each(function(index, task) {
     filteredData.push(task);
@@ -180,6 +186,7 @@ function showListThree(){
 }
 
 function showCompleted(){
+  $("#dropdown-nav").toggle();
   filteredData = [];
   $(data).each(function(index, task) {
     if (task.completed == true) {
