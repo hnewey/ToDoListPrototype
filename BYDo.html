@@ -7,8 +7,10 @@
     <!-- Put your css links and small amounts of page level style code here -->
     <link rel="stylesheet" href="./BYDo.css" type="text/css">
     <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" />
     <!-- Put your .js links here so that they may take advantage of web browser cache -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script src="./data.js"></script>
     <script src="./creativeWriting.js"></script>
     <script src="./listThree.js"></script>
@@ -96,6 +98,10 @@
     		<p>Upload Your Photo</p>
     		<button onclick="imageOverlay()">Cancel</button><button onclick="uploadImageData();">Upload</button>
     	</div>
+    </div>
+
+    <div id="checkDeletion" title="Remove Task?" style="display:none">
+        <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This task will be permanently removed. Are you sure?</p>
     </div>
     </body>
 </html>

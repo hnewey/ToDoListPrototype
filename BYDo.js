@@ -91,7 +91,7 @@ function renderListTable()
   $(filteredData).each(function(index, task) {
     var tr = $('<tr>');
     if (task.completed === false) {
-      $(tr).append("<td><input type='checkbox' align='center' onclick='completeTask("+task.id+")'></td> ");
+      $(tr).append("<td><input type='checkbox' align='center' onclick='confirmDeletion(this, "+task.id+")'></td> ");
       $(tr).append('<td>'+task.name+'</td>');
       $(tr).append('<td>'+getReadableDate(task.due)+'</td>');
       $(tr).append('<td>'+task.priority+'</td>');
@@ -100,10 +100,35 @@ function renderListTable()
   });
 }
 
+function confirmDeletion(self, id){
+    if($(self).prop("checked")){
+        $("#checkDeletion").dialog({
+            modal: true,
+            resizable: false,
+            height: 140,
+            buttons: {
+                "Yes": function() {
+                    $( this ).dialog( "close" );
+                    completeTask(id);
+                },
+                Cancel: function() {
+                    $( this ).dialog( "close" );
+                    $(self).prop("checked", false);
+                }
+            }
+        });
+    }
+}
+
 function completeTask(id){
+<<<<<<< HEAD
+  for (i=0;i<data.length;i++) {
+    var task = data[i];
+=======
   
   for (i=0;i<filteredData.length;i++) {
     var task = filteredData[i];
+>>>>>>> a4a7ac6b5f73ec0c86680add9091d082d2e65ea3
     if (task.id === id) {
       task.completed = true;
       break;
