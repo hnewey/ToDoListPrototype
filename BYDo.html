@@ -66,7 +66,7 @@
 	<div class="search-add">
 		<form role="search">
 			<div class="search-task">
-			<input type="text" class="search-add-bar" placeholder="   Search Tasks / Quick Add" onkeypress="searchData(this.value)" onchange="this.onkeypress()" onpaste="this.onkeypress()" oninput="this.onkeypress()" >
+			<input id='searchBar' type="text" class="search-add-bar" placeholder="   Search Tasks / Quick Add" onkeypress="searchData(this.value)" onchange="this.onkeypress()" onpaste="this.onkeypress()" oninput="this.onkeypress()" >
 			<button type="submit" class="btn important-button">Add Task</button>
 			</div>
 		</form>
@@ -94,7 +94,7 @@
     <div id="imageOverlay">
     	<div>
     		<p>Upload Your Photo</p>
-    		<button onclick="imageOverlay()">Cancel</button><button onclick="uploadImageData()">Upload</button>
+    		<button onclick="imageOverlay()">Cancel</button><button onclick="uploadImageData();">Upload</button>
     	</div>
     </div>
     </body>

@@ -2,6 +2,8 @@ var filteredData = [];
 var currentWeeklyViewDate;
 var monthsOfTheYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 var daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var currentView = "list";
+var activeList = "data";
 
 $(document).ready(function() {
   showListTab();
@@ -12,7 +14,67 @@ function showListTab()
   $('#tbl-day').hide();
   $('#tbl-list').show();
   copyDataToFiltered();
-  renderListTable();
+  renderApropriateTable();
+  changeViewToList();
+}
+
+function changeViewToList(){
+  currentView = "list";
+  inititateSearchOnViewChange();
+}
+
+function changeViewToWeek(){
+  currentView = "week";
+  inititateSearchOnViewChange();
+}
+
+function changeListToData(){
+  activeList = "data";
+  inititateSearchOnViewChange();
+}
+
+function changeListToCreative(){
+  activeList = "creativeWriting";
+  inititateSearchOnViewChange();
+}
+
+function changeListToThree(){
+  activeList = "listThree";
+  inititateSearchOnViewChange();
+}
+
+function changeListToAll(){
+  activeList = "all";
+  inititateSearchOnViewChange();
+}
+
+function resetToCurrentList(){
+  if (activeList === "all") {
+    copyDataToFiltered();
+    $(creativeWritingList).each(function(index, task) {filteredData.push(task);});
+    $(listThree).each(function(index, task) {filteredData.push(task);});
+  }else if(activeList === "data"){
+    filteredData = [];
+    $(data).each(function(index, task) {filteredData.push(task);});
+  }else if(activeList === "creativeWriting"){
+    filteredData = [];
+    $(creativeWritingList).each(function(index, task) {filteredData.push(task);});
+  }else if(activeList === "listThree"){
+    filteredData = [];
+    $(listThree).each(function(index, task) {filteredData.push(task);});
+  }else{
+    copyDataToFiltered();
+    $(creativeWritingList).each(function(index, task) {filteredData.push(task);});
+    $(listThree).each(function(index, task) {filteredData.push(task);});
+  }
+}
+
+function renderApropriateTable(){
+  if (currentView === "list") {
+    renderListTable();
+  }else{
+    renderWeeklyTable();
+  }
 }
 
 function copyDataToFiltered(){
@@ -20,11 +82,6 @@ function copyDataToFiltered(){
   $(data).each(function(index, task) {
     filteredData.push(task);
   });
-}
-
-function renderApropriateTable(){
-  //Some Logic Will Go Here
-  renderListTable();
 }
 
 function renderListTable()
@@ -75,12 +132,14 @@ function showAllLists(){
   $(listThree).each(function(index, task) {
     filteredData.push(task);
   });
-  renderApropriateTable();
+  //renderApropriateTable();
+  changeListToAll();
 }
 
 function showMyList(){
   copyDataToFiltered();
-  renderApropriateTable();
+  //renderApropriateTable();
+  changeListToData();
 }
 
 function showCWList(){
@@ -88,7 +147,8 @@ function showCWList(){
   $(creativeWritingList).each(function(index, task) {
     filteredData.push(task);
   });
-  renderApropriateTable();
+  //renderApropriateTable();
+  changeListToCreative();
 }
 
 function showListThree(){
@@ -96,7 +156,8 @@ function showListThree(){
   $(listThree).each(function(index, task) {
     filteredData.push(task);
   });
-  renderApropriateTable();
+  //renderApropriateTable();
+  changeListToThree();
 }
 
 function showCompleted(){
@@ -147,16 +208,16 @@ function uncompleteTask(id){
   renderCompletedTable();
 }
 
-function resetToCurrentList(){
-  showAllLists();
+function inititateSearchOnViewChange() {
+  var input = $("#searchBar").val();
+  searchData(input);
 }
 
 function searchData(input){
-  //I still need to come up with a way to specify a list before searching so it doesnt always use this one
   resetToCurrentList();
   
   if (input === '' || input === ' ' || input == null || input == '   Search Tasks / Quick Add') {
-    renderListTable();
+    renderApropriateTable();
     return;
   }
   
@@ -170,10 +231,7 @@ function searchData(input){
   }
   filteredData = temFilter;
   
-  //At the moment I am unsure how we should determine if we are searching on list view or week view.
-  //Maybe make a seperate search bar for each List and Week view and include which bar is being searched
-  //from as an arguement to this function so I know which to render in.
-  renderApropriateTable()
+  renderApropriateTable();
 }
 
 function getReadableDate(date)
@@ -224,13 +282,14 @@ function sortPriority() {
 }
 
 function weekView() {
-
   currentWeeklyViewDate = new Date();
   currentWeeklyViewDate.setHours(0);
   currentWeeklyViewDate.setMinutes(00);
   currentWeeklyViewMonth = currentWeeklyViewDate.getMonth();
 
   renderWeeklyTable();
+  changeViewToWeek();
+
 }
 
 function nextWeekView() {
