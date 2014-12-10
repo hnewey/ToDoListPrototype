@@ -77,6 +77,8 @@ ul.navbar {
 ****************************************/
 nav a {
 	text-decoration: none;
+	margin: -20px -46px;
+	padding: 20px 46px;
 }
 
 nav#main-navbar ul {
@@ -689,7 +691,9 @@ button.btn.important-button {
 		width: 120px;
 		position: relative;
 		left: -5px;
-	}
+	
+		cursor: pointer;
+}
 }
 
 .arrow-up {
