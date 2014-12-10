@@ -104,19 +104,14 @@ nav#main-navbar ul li {
 	border-color: #1b5da5;
 	border-width: 1px;
 	background-color: #1b5da5;
-	/*Uncomment box-shadow lines below if Week View is selected */
-	/*-webkit-box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77); 
-	-moz-box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77);
-	box-shadow: inset -10px 10px 20px -6px rgba(0,0,0,0.77);*/
 }
 
 
 .not-selected-tab {
 background-color: #1b5da5;
-/*Uncomment box-shadow lines below if List View is selected */
--webkit-box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
--moz-box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
-box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
+-webkit-box-shadow: inset 1px 6px 17px 4px rgba(0,0,0,0.75);
+-moz-box-shadow: inset 1px 6px 17px 4px rgba(0,0,0,0.75);
+box-shadow: inset 1px 6px 17px 4px rgba(0,0,0,0.75);
 }
 
 #dropdown-nav {
@@ -658,17 +653,17 @@ button.btn.important-button {
 	****************************************/
 	#title {
 		margin-left: 450px;
-		margin-right: 349px;
+		margin-right: 351px;
 	}
 
 	#nav-list {
-		padding: 19px 45px;
+		padding: 20px 45px;
 	}
 
 
 	#nav-week {
 	padding: 20px 45px;
-	margin-left: 0px;
+	margin-left: -2px;
 	}
 
 	li.main-dropdown {
