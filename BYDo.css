@@ -946,3 +946,8 @@ button.addReminder {
     margin-top: 10px;
     padding-bottom: 3px;
 }
+
+/* To disable scrolling for the Add Task Modal */
+.ui-dialog .ui-dialog-content {
+overflow: hidden !important;
+}
