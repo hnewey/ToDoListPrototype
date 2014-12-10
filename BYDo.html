@@ -16,94 +16,94 @@
     <script src="./listThree.js"></script>
     <script src="./BYDo.js"></script>
 </head>
-	<nav id="main-navbar">
-	    <ul id="navbar">
-	      <!-- Menu Dropdown Button -->
-		  <li role="presentation" class="main-dropdown">
-	    	<a class="dropdown-toggle" data-toggle="dropdown" href="javascript:$('#dropdown-nav').toggle()" role="button" aria-expanded="false">
-		  	  <i class="fa fa-bars menu-icon"></i>
-		    </a>
-		  </li>
-		  <li id="title">BY-Do</li>
-		  <li id="nav-list" class="selected-tab"><a href="javascript:showListTab()">List</a></li>
-		  <li id="nav-week" class="not-selected-tab"><a href="#" onclick="weekView()">Week</a></li>
-	    </ul>
-	</nav>
-	
-	<nav id="dropdown-nav">
-	  <ul class="dropdown-menu" role="menu">
-	    <!--Menu Items -->
-	    <li class="dropdown ">
-	  	<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-	  	Task Lists <span class="caret"></span>
-	  	</a>
-	  	<ul class="lists-menu" role="menu" id="task-lists">
-	  	  <!-- Dynamic Task Lists Items Will go here (Below are placeholders -->
-	  	  <li><a href="#" onclick="Javascript:showAllLists()">All</a></li>
-	  	  <li><a href="#" onclick="Javascript:showMyList()">My List</a></li>
-	  	  <li><a href="#" onclick="Javascript:showCWList()">Creative Writing</a></li>
-	  	  <li><a href="#" onclick="Javascript:showListThree()">List 3</a></li>
-		  <li><a href="#" onclick="Javascript:showCompleted()">Completed</a></li>
-	  	  <li><span class="add"></span><a href="#">Add List</a></li>
-	  	</ul>
-	    </li>
-	    <span class="separator"></span>
-	    <li class="dropdown">
-	  	<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-	  	Accounts <span class="caret"></span>
-	  	</a>
-	  	<ul class="accounts-menu" role="menu" id="accounts-list">
-	  	  <!-- Dynamic Task Lists Items Will go here (Below are placeholders) -->
-	  	  <li><span class="image"></span><a href="#" onclick="imageOverlay()">Image</a></li>
-	  	  <li><span class="import"></span><a href="javascript:importAccount()">Import Account</a></li>
-	  	</ul>
-	    </li>
-	  </ul>
-	</nav>
-	
+    <nav id="main-navbar">
+        <ul id="navbar">
+          <!-- Menu Dropdown Button -->
+          <li role="presentation" class="main-dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:$('#dropdown-nav').toggle()" role="button" aria-expanded="false">
+              <i class="fa fa-bars menu-icon"></i>
+            </a>
+          </li>
+          <li id="title">BY-Do</li>
+          <li id="nav-list" class="selected-tab"><a href="javascript:showListTab()">List</a></li>
+          <li id="nav-week" class="not-selected-tab"><a href="#" onclick="weekView()">Week</a></li>
+        </ul>
+    </nav>
+    
+    <nav id="dropdown-nav">
+      <ul class="dropdown-menu" role="menu">
+        <!--Menu Items -->
+        <li class="dropdown ">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+        Task Lists <span class="caret"></span>
+        </a>
+        <ul class="lists-menu" role="menu" id="task-lists">
+          <!-- Dynamic Task Lists Items Will go here (Below are placeholders -->
+          <li><a href="#" onclick="Javascript:showAllLists()">All</a></li>
+          <li><a href="#" onclick="Javascript:showMyList()">My List</a></li>
+          <li><a href="#" onclick="Javascript:showCWList()">Creative Writing</a></li>
+          <li><a href="#" onclick="Javascript:showListThree()">List 3</a></li>
+          <li><a href="#" onclick="Javascript:showCompleted()">Completed</a></li>
+          <li><span class="add"></span><a href="#">Add List</a></li>
+        </ul>
+        </li>
+        <span class="separator"></span>
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+        Accounts <span class="caret"></span>
+        </a>
+        <ul class="accounts-menu" role="menu" id="accounts-list">
+          <!-- Dynamic Task Lists Items Will go here (Below are placeholders) -->
+          <li><span class="image"></span><a href="#" onclick="imageOverlay()">Image</a></li>
+          <li><span class="import"></span><a href="javascript:importAccount()">Import Account</a></li>
+        </ul>
+        </li>
+      </ul>
+    </nav>
+    
     <body>
-	<div class="search-add">
-			<div class="search-task">
-			<input id='searchBar' type="text" class="search-add-bar" placeholder="   Search Tasks" onkeypress="searchData(this.value)" onchange="this.onkeypress()" onpaste="this.onkeypress()" oninput="this.onkeypress()" >
-			<button class="btn important-button" onclick="createTaskMenu()">Add Task</button>
-			</div>
-	</div>
-	
-	<div id="weekly-header-bar">
-	</div>
+    <div class="search-add">
+            <div class="search-task">
+            <input id='searchBar' type="text" class="search-add-bar" placeholder="   Search Tasks" onkeypress="searchData(this.value)" onchange="this.onkeypress()" onpaste="this.onkeypress()" oninput="this.onkeypress()" >
+            <button class="btn important-button" onclick="createTaskMenu()">Add Task</button>
+            </div>
+    </div>
+    
+    <div id="weekly-header-bar">
+    </div>
 
-	<table class="tbl tbl-striped" id="tbl-list">
-		<thead id="head-list">
-			<tr>
-				<th>&nbsp&nbsp&nbsp</th>
-				<th id="task-col">Task</th>
-				<th id="due-col"><a href="javascript:sortDue()">Due <span id="dueArrow"></span></a></th>
-				<th id="priority-col"><a href="javascript:sortPriority()">Priority <span id="priorityArrow"></span></a></th>
-			</tr>
-		</thead>
-		<tbody id="dynamic-list">
-		</tbody>
+    <table class="tbl tbl-striped" id="tbl-list">
+        <thead id="head-list">
+            <tr>
+                <th>&nbsp&nbsp&nbsp</th>
+                <th id="task-col">Task</th>
+                <th id="due-col"><a href="javascript:sortDue()">Due <span id="dueArrow"></span></a></th>
+                <th id="priority-col"><a href="javascript:sortPriority()">Priority <span id="priorityArrow"></span></a></th>
+            </tr>
+        </thead>
+        <tbody id="dynamic-list">
+        </tbody>
     </table>
 
     <table class="tbl" id="tbl-day" style="display:none;">
     </table> 
 
     <div id="imageOverlay">
-    	<div>
-    		<p>Upload Tasks from an Image</p>
+        <div>
+            <p>Upload Tasks from an Image</p>
             <img src="img/calendar.JPG"></img>
-    		<button onclick="imageOverlay()">Cancel</button><button onclick="uploadImageData();">Upload Tasks</button>
-    	</div>
+            <button onclick="imageOverlay()">Cancel</button><button onclick="uploadImageData();">Upload</button>
+        </div>
     </div>
 
     <div id="importAccountOverlay" class="overlay">
-    	<div>
-    		<p>Add Account</p>
-    		<button onclick="importAccount('LearningSuite');">LearningSuite</button>
-    		<button onclick="importAccount('GTasks');">GTasks</button>
-    		<button onclick="importAccount('Other');">Other</button>
-    		<button onclick="importAccount()">Cancel</button>
-    	</div>
+        <div>
+            <p>Add Account</p>
+            <button onclick="importAccount('LearningSuite');">LearningSuite</button>
+            <button onclick="importAccount('GTasks');">GTasks</button>
+            <button onclick="importAccount('Other');">Other</button>
+            <button onclick="importAccount()">Cancel</button>
+        </div>
     </div>
 
     <div id="checkDeletion" title="Remove Task?" style="display:none">
@@ -155,19 +155,7 @@
                                         <label class="labels" id="dueLabel" for="dueInput">Due:</label>
                                     </td>
                                     <td>
-                                        <input type="text" id="dueInput">
-                                    </td>
-                                    <td>
-                                        <label class="labels" id="dueDateLabel" for="dateInput">on:</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" id="dateInput">
-                                    </td>
-                                    <td>
-                                        <label class="labels" id="dueDateLabel" for="dateInput">on:</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" id="dateInput">
+                                        <input type="text" name="due" id="dueInput" class="text ui-widget-content ui-corner-all textInput">
                                     </td>
                                     <td>
                                         <label class="labels" id="dueDateLabel" for="dateInput">on:</label>
