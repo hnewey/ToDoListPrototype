@@ -157,7 +157,15 @@
                                         <input type="text" name="due" id="dueInput" class="text ui-widget-content ui-corner-all textInput">
                                     </td>
                                     <td>
+                                        <label class="labels" id="dueDateLabel" for="dateInput">on:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="dateInput">
+                                    </td>
+                                    <td>
                                         <label class="labels" id="recurringLabel" for="recurringInput">Recurring:</label>
+                                    </td>
+                                    <td>
                                         <input type="checkbox" name="recurring" id="recurringInput">
                                     </td>
                                 </tr>
@@ -176,9 +184,9 @@
                                     </td>
                                     <td>
                                         <select id="categoryInput">
-                                            <option value="myList">My List</option>
-                                            <option value="creativeWriting">Creative Writing</option>
-                                            <option value="list3">List 3</option>
+                                            <option value="My List">My List</option>
+                                            <option value="Creative Writing">Creative Writing</option>
+                                            <option value="List 3">List 3</option>
                                         </select>
                                     </td>
                                     <td>
@@ -186,9 +194,9 @@
                                     </td>
                                     <td>
                                         <select id="priorityInput">
-                                            <option value="low">Low</option>
-                                            <option value="medium">Med</option>
-                                            <option value="high">High</option>
+                                            <option value="Low">Low</option>
+                                            <option value="Medium">Med</option>
+                                            <option value="High">High</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -207,16 +215,16 @@
                                     </td>
                                     <td>
                                         <select id="priorityChangeInput">
-                                            <option value="low">Low</option>
-                                            <option value="medium">Med</option>
-                                            <option value="high">High</option>
+                                            <option value="Low">Low</option>
+                                            <option value="Medium">Med</option>
+                                            <option value="High">High</option>
                                         </select>
                                     </td>
                                     <td>
-                                        <label class="labels" id="dateLabel" for="dateInput">on:</label>
+                                        <label class="labels" id="dateChangeLabel" for="dateChangeInput">on:</label>
                                     </td>
                                     <td>
-                                        <input type="text" id="dateInput">
+                                        <input type="text" id="dateChangeInput">
                                     </td>
                                 </tr>
                             </table>
@@ -231,6 +239,10 @@
                                 <tr>
                                     <td>
                                         <label class="labels" id="remindersLabel" for="remindersInput">Reminders:</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
                                         <select id="remindersInput">
                                             <option value="email">Email</option>
                                             <option value="pushNotification">Push Notification</option>

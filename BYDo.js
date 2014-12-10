@@ -286,8 +286,11 @@ function zeroPad(length, val)
   return val;
 }
 
+//POP UP MENU FOR CREATING A NEW TASK
 function createTaskMenu(){
     $("#addTaskForm")[0].reset();
+    $('#dateInput').datepicker({ dateFormat: 'MM dd, yy' });
+    $('#dateChangeInput').datepicker({ dateFormat: 'MM dd, yy' });
     $("#addTaskMenu").dialog({
         modal: true,
         draggable: true,
@@ -299,11 +302,38 @@ function createTaskMenu(){
                 $(this).dialog("close");
             },
             "Add": function() {
-                alert("Tasked added");
+                var taskID = curID;
+                var taskName = $("#nameInput").val();
+                var dueTime = $("#dueInput").val() + ":00";
+                var dueDate = $("#dateInput").val();
+                var taskPriority = $("#priorityInput").val();
+                var taskList = $("#categoryInput").val();
+                if(taskName.length == 0){
+                    taskName = "[Untitled]";
+                }
+                if(dueTime == ":00"){
+                    dueTime = "10:00:00";
+                }
+                if(dueDate.length == 0){
+                    dueDate = "December 10, 2014";
+                }
+                data.push(
+                    {
+                        "id": taskID,
+                        "name": taskName,
+                        "due": new Date(dueDate + " " + dueTime),
+                        "priority": taskPriority,
+                        "list": taskList,
+                        "completed": false
+                    }
+                );
+                curID++;
+                copyDataToFiltered();
+                renderApropriateTable();
+                $(this).dialog("close");
             }
         }
     });
-    $('#dateInput').datepicker();
 }
 
 //BELOW SHOULD PROBABLY MORE SIMPLE THROUGH JQUERY -- THIS WAS OLD CODE I HAD THAT WORKS
