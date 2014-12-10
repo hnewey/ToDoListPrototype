@@ -294,8 +294,8 @@ function createTaskMenu(){
     $("#addTaskMenu").dialog({
         modal: true,
         draggable: true,
-        height: 600,
-        width: 520,
+        height: 630,
+        width: 545,
         resizable: false,
         buttons: {
             "Close": function() {
