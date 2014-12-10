@@ -1,6 +1,6 @@
 var filteredData = [];
 var currentWeeklyViewDate;
-var monthsOfTheYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+var monthsOfTheYear = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 var daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var currentView = "list";
 var activeList = "data";
@@ -410,11 +410,11 @@ function renderWeeklyTable() {
   var lastDayYyyy = lastDateOfWeek.getFullYear();
   
   //Sets correct dates in the weekly view header bar
-  weekViewHtml += '<p id="weekly-header-paragraph">';
-  weekViewHtml += '<button id="left-arrow-weekly-bar" onclick="lastWeekView()">Last Week</button>';
+  weekViewHtml += '<div id="weekly-header-paragraph">';
+  weekViewHtml += '<a id="left-arrow-weekly-bar" onclick="lastWeekView()"><img id="left-arrow-img" src="img/left-arrow.png"></img></a><p id="weekly-header-date">';
   weekViewHtml += mm + ' ' + currentWeeklyViewDate.getDate() + ", " + yyyy + ' - ' + lastDayMm + ' ' + lastDateOfWeek.getDate() + ', ' + lastDayYyyy;
-  weekViewHtml += '<button id="right-arrow-weekly-bar" onclick="nextWeekView()">Next Week</button>';
-  weekViewHtml += '</p>';
+  weekViewHtml += '</p><a id="right-arrow-weekly-bar" onclick="nextWeekView()"><img id="right-arrow-img" src="img/right-arrow.png"></img></a>';
+  weekViewHtml += '</div>';
 
   $('#weekly-header-bar').html(weekViewHtml);
   
@@ -451,21 +451,20 @@ function renderWeeklyTable() {
     var firstTime = true;
     for (var task of tasksArr) {
       if (task.completed === false) {
-	if (firstTime) {
-          $('#tbl-list tbody').append('<tr><td id="date-row" colspan="4">' + daysOfTheWeek[task.due.getDay()] + ', ' + monthsOfTheYear[task.due.getMonth()] + ' ' + task.due.getDate() + '</td></tr>');
-          firstTime = false;
-        }
+	       if (firstTime) {
+            $('#tbl-list tbody').append('<tr><td id="date-row" colspan="4">' + daysOfTheWeek[task.due.getDay()] + ', ' + monthsOfTheYear[task.due.getMonth()] + ' ' + task.due.getDate() + '</td></tr>');
+            firstTime = false;
+          }
 
-      var tr = $('<tr>');
-      $(tr).append("<td><input type='checkbox' align='center' onclick='completeTaskWeek("+task.id+")'></td> ");
-      $(tr).append('<td>'+task.name+'</td>');
-      $(tr).append('<td>'+getReadableDate(task.due)+'</td>');
-      $(tr).append('<td>'+task.priority+'</td>');
-      $('#tbl-list tbody').append(tr);
+          var tr = $('<tr>');
+          $(tr).append("<td><input type='checkbox' align='center' onclick='completeTaskWeek("+task.id+")'></td> ");
+          $(tr).append('<td class="td1">'+task.name+'</td>');
+          $(tr).append('<td class="td2">'+getReadableDate(task.due)+'</td>');
+          $(tr).append('<td class="td3">'+task.priority+'</td>');
+          $('#tbl-list tbody').append(tr);
       }
     }
   }
-
 }
 
 function sortNumber(a,b) {

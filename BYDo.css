@@ -225,6 +225,16 @@ vertical-align: top;
 border-top: 1px solid #dddddd;
 }
 
+.td1 {
+	width: 55%;
+}
+.td2 {
+	width: 20%;
+}
+.td3 {
+	width: 15%;
+}
+
 #tbl-list > tbody > tr:nth-child(even) {
   background-color: #f9f9f9;
 }
@@ -287,6 +297,11 @@ button.btn.important-button {
     float: right;
 }
 
+#right-arrow-img, #left-arrow-img {
+	max-width: 30px;
+	max-height: 30px;
+}
+
 #weekly-header-paragraph {
     padding-top: 15px;
     text-align: center;
@@ -294,6 +309,10 @@ button.btn.important-button {
     background-color: #1b5da5;
     height: 35px;
     color: white;
+}
+
+#weekly-header-date {
+		display:inline;
 }
 
 #imageOverlay {
@@ -383,6 +402,7 @@ button.btn.important-button {
 	nav#main-navbar a {
 		font-size: 12px;
 	}
+
 	/****************************************
 	*	SEARCH/ADD BUTTON STYLING       *
 	****************************************/
