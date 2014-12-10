@@ -12,6 +12,10 @@ $(document).ready(function() {
 
 function showListTab()
 {
+  $('#nav-list').removeClass('not-selected-tab');
+  $('#nav-list').addClass('selected-tab');
+  $('#nav-week').addClass('not-selected-tab');
+  $('#nav-week').removeClass('selected-tab');
   $('#tbl-day').hide();
   $('#tbl-list').show();
   copyDataToFiltered();
@@ -329,6 +333,10 @@ function sortPriority() {
 }
 
 function weekView() {
+  $('#nav-week').removeClass('not-selected-tab');
+  $('#nav-week').addClass('selected-tab');
+  $('#nav-list').addClass('not-selected-tab');
+  $('#nav-list').removeClass('selected-tab');
   currentWeeklyViewDate = new Date();
   currentWeeklyViewDate.setHours(0);
   currentWeeklyViewDate.setMinutes(00);

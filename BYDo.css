@@ -99,7 +99,7 @@ nav#main-navbar ul li {
 	display: initial;
 }
 
-#nav-list {  
+.selected-tab {  
 	border-style: solid;
 	border-color: #1b5da5;
 	border-width: 1px;
@@ -111,7 +111,7 @@ nav#main-navbar ul li {
 }
 
 
-#nav-week {
+.not-selected-tab {
 background-color: #1b5da5;
 /*Uncomment box-shadow lines below if List View is selected */
 -webkit-box-shadow: inset 10px 10px 20px -6px rgba(0,0,0,0.77);
@@ -360,7 +360,7 @@ button.btn.important-button {
 	}
 
 	#nav-list {
-		padding: 19px 43px;  
+		padding: 20px 43px;  
 	}
 
 
