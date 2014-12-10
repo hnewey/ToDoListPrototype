@@ -47,6 +47,7 @@ ul.navbar {
 }
 #nameInput {
     margin-left: 10px;
+    width: 422px;
 }
 .rows {
     margin-top: 30px;
@@ -54,7 +55,7 @@ ul.navbar {
 #descriptionInput {
     margin-top: 4px;
     height: 80px;
-    width: 100%;
+    width: 487px;
     text-align: left;
     word-wrap: break-word;
     resize: none;
@@ -65,13 +66,14 @@ ul.navbar {
 #dueInput {
     margin-left: 0px;
     width: 82px;
-    padding: 0px 5px;
+    padding: 0px 10px;
 }
 #categoryRow {
     margin-top: 15px;
 }
 #categoryInput {
-    margin-left: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 /****************************************
 *	     NAVBAR STYLING					*
@@ -203,11 +205,125 @@ nav#dropdown-nav {
 	border-width: 1px;
 	border-top-color: rgb(217,217,217);
 	position: absolute;
-	top: 56px;
+	top: 57px;
 }
 
 ul#task-lists {
 	margin-left: -30px;
+}
+
+/****************************************
+*		Images for Menu					*
+****************************************/
+div#add {
+    background-image: url('Untitled-3.png');
+    background-size: 20px;
+    height: auto;
+    width: auto;
+    background-repeat: no-repeat;
+    width: 20px;
+    left: -8px;
+    position: absolute;
+    top: 7px;
+    height: 21px;
+    margin-left: -7px;
+    clip: rect(0px,19px,20px,1px);
+}
+
+span#add {
+    background-image: url('Untitled-3.png');  
+    background-position-x: 1px;
+    background-size: 17px;  height: auto;  width: auto;  background-repeat: no-repeat;  
+    width: 44px;  
+    left: -22px;  position: relative;  
+    top: 0px;  height: 21px;  
+    background-position-x: 0px;
+}
+
+li {
+    position: relative;
+}
+
+div#gtasks {
+background-image: url('Untitled-4.png');
+background-size: 21px;
+background-position-y: -2px;
+background-position-x: -0.5px;
+height: auto;
+width: auto;
+background-repeat: no-repeat;
+width: 20px;
+left: -10px;
+position: absolute;
+top: 9px;
+height: 22px;
+margin-left: -5px;
+clip: rect(2px,18px,18px,2px);
+}
+
+div#other {
+background-image: url('1198.png');
+background-size: 20px;
+height: auto;
+width: auto;
+background-repeat: no-repeat;
+width: 20px;
+left: -8px;
+position: absolute;
+top: 7px;
+height: 21px;
+margin-left: -7px;
+clip: rect(0px,19px,20px,1px);
+}
+
+div#learningsuite {
+background-image: url('Untitled-5.png');
+background-size: 20px;
+height: auto;
+width: auto;
+background-repeat: no-repeat;
+width: 20px;
+left: -8px;
+position: absolute;
+top: 7px;
+height: 21px;
+margin-left: -7px;
+clip: rect(0px,19px,20px,1px);
+}
+
+div#image {
+background-image: url('image.png');
+background-size: 24px;
+height: auto;
+width: auto;
+background-repeat: no-repeat;
+background-size: 19px 22px;
+width: 24px;
+left: -8px;
+position: absolute;
+top: 7px;
+height: 21px;
+margin-left: -7px;
+clip: rect(0px,19px,20px,1px);
+}
+
+div#import {
+background-image: url('Untitled-2.png');
+background-size: 20px;
+height: auto;
+width: auto;
+background-repeat: no-repeat;
+width: 20px;
+left: -8px;
+position: absolute;
+top: 7px;
+height: 21px;
+margin-left: -7px;
+clip: rect(0px,19px,20px,1px);
+}
+
+ul#accounts-list li {
+    margin-left: -27px !important;
 }
 
 /****************************************
@@ -269,6 +385,7 @@ input.search-add-bar {
 
 	margin: 0px 1px;
 }
+
 
 button.btn.important-button {
 	padding: 12px 0px;
@@ -353,6 +470,9 @@ button.btn.important-button {
      text-align:center;
 }
 
+button.btn.important-button {
+	cursor: pointer;
+}
 
 /******************************************************
 ***********  STYLING BETWEEN 0PX and 499PX  ***********
@@ -692,9 +812,85 @@ button.btn.important-button {
 		width: 120px;
 		position: relative;
 		left: -5px;
-	
-		cursor: pointer;
-}
+	}
+
+	/************************************
+	*		Add Task Modal Styling		*
+	************************************/
+	div#addTaskModal {
+		width: 554px !important;
+	}
+
+	label#dueDateLabel {
+		padding: 0px 10px;
+	}
+
+	input#dateInput {
+		width: 132px;
+		margin-right: 10px;
+	}
+
+	label#dueLabel {
+		margin-right: 10px;
+	}
+
+	label#recurringLabel {
+		margin-left: 5px;
+		margin-right: 0px;
+	}
+
+	label#categoryLabel {
+		padding-right: 10px;
+	}
+
+	label#priorityLabel {
+		padding: 0px 10px;
+	}
+
+	label#priorityChangeLabel {
+		padding-right: 10px;
+	}
+
+	label#dateChangeLabel {
+		padding: 0px 10px;
+	}
+
+	input#dateChangeInput {
+		width: 193px;
+	}
+
+	select#remindersInput {
+		margin-top: 10px;
+		margin-right: 10px;
+	}
+
+	select#reminderTime {
+		margin-top: 10px;
+		margin-right: 10px;
+	}
+
+	.addButton {
+		background-color: #FFC000 !important;
+		border-color: black !important;
+		border-width: 1px;
+		color: black;
+	}
+
+	div#importAccount button {
+		display: block;
+		margin: 5px auto;
+		padding: 10px;
+		width: 80%;
+	}
+
+	li.dropdown {
+		list-style: none;
+		margin-left: -15px !important;
+	}
+
+	li.dropdown li {
+		list-style: none;
+	}
 }
 
 .arrow-up {
@@ -703,7 +899,6 @@ button.btn.important-button {
     height: 0; 
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    
     border-bottom: 5px solid black;
 }
 
@@ -715,4 +910,30 @@ button.btn.important-button {
     border-right: 5px solid transparent;
     
     border-top: 5px solid black;
+}
+
+/* Corner radius for UI */
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {
+	border-top-left-radius: 0px !important;
+}
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr {
+	border-top-right-radius: 0px !important;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl {
+	border-bottom-left-radius: 0px !important;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+	border-bottom-right-radius: 0px !important;
 }
