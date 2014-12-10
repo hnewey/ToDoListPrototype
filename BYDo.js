@@ -476,7 +476,7 @@ function importAccount(account) {
   el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
   if (!account || accountsAdded.indexOf(account) !== -1) return;
 
-  $('#accounts-list').prepend('<li>'+account+'</li>');
+  $('#accounts-list').prepend('<li><div id="'+account+'"></div>'+account+'</li>');
   accountsAdded.push(account);
 }
 
