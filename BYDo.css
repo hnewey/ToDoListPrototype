@@ -951,3 +951,13 @@ button.addReminder {
 .ui-dialog .ui-dialog-content {
 overflow: hidden;
 }
+
+label {
+    font-family: initial;
+    font-size: initial;
+    font-weight: bold;
+}
+
+select {
+    font-family: initial;
+}
