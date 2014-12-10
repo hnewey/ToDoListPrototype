@@ -44,18 +44,18 @@
           <li><a href="#" onclick="Javascript:showCWList()">Creative Writing</a></li>
           <li><a href="#" onclick="Javascript:showListThree()">List 3</a></li>
           <li><a href="#" onclick="Javascript:showCompleted()">Completed</a></li>
-          <li><span class="add"></span><a href="#">Add List</a></li>
+          <li><div id="add">&nbsp;</div><a href="#">Add List</a></li>
         </ul>
         </li>
-        <span class="separator"></span>
+        <div id="separator">&nbsp;</div>
         <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-        Accounts <span class="caret"></span>
+        Accounts <div id="caret">&nbsp;</div>
         </a>
         <ul class="accounts-menu" role="menu" id="accounts-list">
           <!-- Dynamic Task Lists Items Will go here (Below are placeholders) -->
-          <li><span class="image"></span><a href="#" onclick="imageOverlay()">Image</a></li>
-          <li><span class="import"></span><a href="javascript:importAccount()">Import Account</a></li>
+          <li><div id="image">&nbsp;</div><a href="#" onclick="imageOverlay()">Image</a></li>
+          <li><div id="import">&nbsp;</div><a href="javascript:importAccount()">Import Account</a></li>
         </ul>
         </li>
       </ul>
@@ -152,7 +152,7 @@
                             <table class="rows" id="dueRecurringTable">
                                 <tr>
                                     <td>
-                                        <label class="labels" id="dueLabel" for="dueInput">Due:</label>
+                                        <label class="labels" id="dueLabel" for="dueInput">Due at:</label>
                                     </td>
                                     <td>
                                         <input type="text" name="due" id="dueInput" class="text ui-widget-content ui-corner-all textInput">
