@@ -5,6 +5,8 @@ var daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Fr
 var currentView = "list";
 var activeList = "data";
 var accountsAdded = [];
+var dueSort = 0;
+var prioritySort = 0;
 
 $(document).ready(function() {
   showListTab();
@@ -12,6 +14,10 @@ $(document).ready(function() {
 
 function showListTab()
 {
+  clearArrows('dueArrow');
+  clearArrows('priorityArrow');
+  prioritySort = 0;
+  dueSort = 0;
   $('#nav-list').removeClass('not-selected-tab');
   $('#nav-list').addClass('selected-tab');
   $('#nav-week').addClass('not-selected-tab');
@@ -333,6 +339,10 @@ function sortPriority() {
 }
 
 function weekView() {
+  clearArrows('dueArrow');
+  clearArrows('priorityArrow');
+  prioritySort = 0;
+  dueSort = 0;
   $('#nav-week').removeClass('not-selected-tab');
   $('#nav-week').addClass('selected-tab');
   $('#nav-list').addClass('not-selected-tab');
@@ -498,4 +508,78 @@ function uploadImageData() {
   
   imageOverlay();
   showListTab();
+}
+
+function sortDue()
+{
+  clearArrows('dueArrow');
+  clearArrows('priorityArrow');
+  prioritySort = 0;
+  if (dueSort === 0)
+    dueSort = 1;
+  else
+    dueSort = dueSort === 1 ? -1 : 1;
+
+  if (dueSort === 1)
+    $('#dueArrow').addClass('arrow-down');
+  else
+    $('#dueArrow').addClass('arrow-up');
+
+  filteredData.sort(function (a, b) {
+    if (a.due == b.due) return 0;
+    if (dueSort === 1)
+    {
+      if(a.due < b.due) return -1;
+      if(a.due > b.due) return 1;
+    }
+    else
+    {
+      if(a.due < b.due) return 1;
+      if(a.due > b.due) return -1;
+    }
+  });
+
+  renderApropriateTable();
+}
+
+function sortPriority()
+{
+  clearArrows('dueArrow');
+  clearArrows('priorityArrow');
+  dueSort = 0;
+  if (prioritySort === 0)
+    prioritySort = 1;
+  else
+    prioritySort = prioritySort === 1 ? -1 : 1;
+
+  if (prioritySort === 1)
+    $('#priorityArrow').addClass('arrow-down');
+  else
+    $('#priorityArrow').addClass('arrow-up');
+
+  var priorities = ['High', 'Medium', 'Low'];
+
+  filteredData.sort(function (a, b) {
+    var aPriority = priorities.indexOf(a.priority);
+    var bPriority = priorities.indexOf(b.priority);
+    if (aPriority == bPriority) return 0;
+    if (prioritySort === 1)
+    {
+      if(aPriority < bPriority) return -1;
+      if(aPriority > bPriority) return 1;
+    }
+    else
+    {
+      if(aPriority < bPriority) return 1;
+      if(aPriority > bPriority) return -1;
+    }
+  });
+
+  renderApropriateTable();
+}
+
+function clearArrows(id)
+{
+  $('#' + id).removeClass('arrow-up');
+  $('#' + id).removeClass('arrow-down');
 }
