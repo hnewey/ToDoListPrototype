@@ -90,8 +90,9 @@
 
     <div id="imageOverlay">
     	<div>
-    		<p>Upload Your Photo</p>
-    		<button onclick="imageOverlay()">Cancel</button><button onclick="uploadImageData();">Upload</button>
+    		<p>Upload Tasks from an Image</p>
+            <img src="img/calendar.JPG"></img>
+    		<button onclick="imageOverlay()">Cancel</button><button onclick="uploadImageData();">Upload Tasks</button>
     	</div>
     </div>
 
@@ -154,7 +155,19 @@
                                         <label class="labels" id="dueLabel" for="dueInput">Due:</label>
                                     </td>
                                     <td>
-                                        <input type="text" name="due" id="dueInput" class="text ui-widget-content ui-corner-all textInput">
+                                        <input type="text" id="dueInput">
+                                    </td>
+                                    <td>
+                                        <label class="labels" id="dueDateLabel" for="dateInput">on:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="dateInput">
+                                    </td>
+                                    <td>
+                                        <label class="labels" id="dueDateLabel" for="dateInput">on:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="dateInput">
                                     </td>
                                     <td>
                                         <label class="labels" id="dueDateLabel" for="dateInput">on:</label>
