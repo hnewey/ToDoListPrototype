@@ -938,3 +938,11 @@ button.btn.important-button {
 .ui-corner-br {
 	border-bottom-right-radius: 0px !important;
 }
+
+button.addReminder {
+    background-color: #FFFFFF;
+    border-color: black;
+    border-width: 1px;
+    margin-top: 10px;
+    padding-bottom: 3px;
+}
