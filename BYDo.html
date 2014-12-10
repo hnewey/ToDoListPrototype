@@ -52,13 +52,10 @@
 	  	<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
 	  	Accounts <span class="caret"></span>
 	  	</a>
-	  	<ul class="accounts-menu" role="menu" id="task-lists">
+	  	<ul class="accounts-menu" role="menu" id="accounts-list">
 	  	  <!-- Dynamic Task Lists Items Will go here (Below are placeholders) -->
-	  	  <li><span class="learningsuite"></span>BYU LearningSuite</li>
-	  	  <li><span class="gtasks"></span>GTasks</li>
-	  	  <li><span class="other"></span>Other Website</li>
 	  	  <li><span class="image"></span><a href="#" onclick="imageOverlay()">Image</a></li>
-	  	  <li><span class="import"></span><a href="#">Import Account</a></li>
+	  	  <li><span class="import"></span><a href="javascript:importAccount()">Import Account</a></li>
 	  	</ul>
 	    </li>
 	  </ul>
@@ -95,6 +92,16 @@
     	<div>
     		<p>Upload Your Photo</p>
     		<button onclick="imageOverlay()">Cancel</button><button onclick="uploadImageData();">Upload</button>
+    	</div>
+    </div>
+
+    <div id="importAccountOverlay" class="overlay">
+    	<div>
+    		<p>Add Account</p>
+    		<button onclick="importAccount('LearningSuite');">LearningSuite</button>
+    		<button onclick="importAccount('GTasks');">GTasks</button>
+    		<button onclick="importAccount('Other');">Other</button>
+    		<button onclick="importAccount()">Cancel</button>
     	</div>
     </div>
 

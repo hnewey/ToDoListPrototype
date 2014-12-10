@@ -4,6 +4,7 @@ var monthsOfTheYear = ['January', 'February', 'March', 'April', 'May', 'June', '
 var daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var currentView = "list";
 var activeList = "data";
+var accountsAdded = [];
 
 $(document).ready(function() {
   showListTab();
@@ -421,6 +422,15 @@ function renderWeeklyTable() {
 
 function sortNumber(a,b) {
     return a - b;
+}
+
+function importAccount(account) {
+  el = document.getElementById("importAccountOverlay");
+  el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+  if (!account || accountsAdded.indexOf(account) !== -1) return;
+
+  $('#accounts-list').prepend('<li>'+account+'</li>');
+  accountsAdded.push(account);
 }
 
 function imageOverlay() {
