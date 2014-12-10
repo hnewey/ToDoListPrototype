@@ -230,21 +230,11 @@ div#add {
     clip: rect(0px,19px,20px,1px);
 }
 
-span#add {
-    background-image: url('Untitled-3.png');  
-    background-position-x: 1px;
-    background-size: 17px;  height: auto;  width: auto;  background-repeat: no-repeat;  
-    width: 44px;  
-    left: -22px;  position: relative;  
-    top: 0px;  height: 21px;  
-    background-position-x: 0px;
-}
-
 li {
     position: relative;
 }
 
-div#gtasks {
+div#GTasks {
 background-image: url('Untitled-4.png');
 background-size: 21px;
 background-position-y: -2px;
@@ -261,7 +251,7 @@ margin-left: -5px;
 clip: rect(2px,18px,18px,2px);
 }
 
-div#other {
+div#Other {
 background-image: url('1198.png');
 background-size: 20px;
 height: auto;
@@ -276,7 +266,7 @@ margin-left: -7px;
 clip: rect(0px,19px,20px,1px);
 }
 
-div#learningsuite {
+div#LearningSuite {
 background-image: url('Untitled-5.png');
 background-size: 20px;
 height: auto;
